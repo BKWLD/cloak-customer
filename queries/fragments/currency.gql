@@ -1,0 +1,4 @@
+fragment currency on MoneyV2 {
+	amount
+	currencyCode
+}

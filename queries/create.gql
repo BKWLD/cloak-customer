@@ -1,0 +1,10 @@
+#import "./fragments/customer.gql"
+#import "./fragments/customer-error.gql"
+
+# Add a customer (register)
+mutation customerCreate($input: CustomerCreateInput!) {
+	mutation: customerCreate(input: $input) {
+		data: customer { ...customer }
+		userErrors: customerUserErrors { ...customerUserError }
+	}
+}

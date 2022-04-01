@@ -1,0 +1,15 @@
+#import "./fragments/customer-error.gql"
+
+mutation customerAddressUpdate(
+	$address: MailingAddressInput!
+	$accessToken: String!
+	$id: ID!) {
+
+	mutation: customerAddressUpdate(
+		address: $address
+		customerAccessToken: $accessToken
+		id: $id) {
+
+		userErrors: customerUserErrors { ...customerUserError }
+	}
+}

@@ -1,0 +1,8 @@
+#import "./fragments/user-error.gql"
+
+# Login a customer (create access token)
+mutation customerAccessTokenDelete($accessToken: String!) {
+	mutation: customerAccessTokenDelete(customerAccessToken: $accessToken) {
+		userErrors { ...userError }
+	}
+}

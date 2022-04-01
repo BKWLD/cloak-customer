@@ -1,0 +1,8 @@
+#import "./fragments/customer-error.gql"
+
+# Recover a customer
+mutation customerRecover($email: String!) {
+  mutation: customerRecover(email: $email) {
+    userErrors: customerUserErrors { ...customerUserError }
+  }
+}

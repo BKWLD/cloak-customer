@@ -1,0 +1,12 @@
+#import "./fragments/customer-error.gql"
+
+# Delete an address given an ID
+mutation customerAddressDelete($id: ID!, $accessToken: String!) {
+
+  mutation: customerAddressDelete(
+		id: $id
+		customerAccessToken: $accessToken) {
+
+    userErrors: customerUserErrors { ...customerUserError }
+  }
+}

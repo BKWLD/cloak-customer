@@ -1,0 +1,16 @@
+{
+	"name": "@cloak-app/customer",
+	"version": "1.0.0",
+	"description": "Cloak components for rendering customer components.",
+	"repository": "git@github.com:BKWLD/cloak-copy.git",
+	"author": "Bukwild <info@bukwild.com>",
+	"license": "MIT",
+	"dependencies": {
+		"@bkwld/vue-modal": "BKWLD/vue-modal#9dc40c6",
+		"@nuxt/utils": "^2.15.8",
+		"js-cookie": "^2.2.1",
+		"vue": "^2.6.11",
+		"vue-country-region-select": "^2.0.16",
+		"vuex": "^3.1.3"
+	}
+}

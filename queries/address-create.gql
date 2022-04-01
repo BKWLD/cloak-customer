@@ -1,0 +1,14 @@
+#import "./fragments/customer-error.gql"
+
+# Create a new address
+mutation customerAddressCreate(
+	$address: MailingAddressInput!
+	$accessToken: String!) {
+
+	mutation: customerAddressCreate(
+		address: $address
+		customerAccessToken: $accessToken) {
+
+		userErrors: customerUserErrors { ...customerUserError }
+	}
+}

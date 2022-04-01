@@ -1,0 +1,14 @@
+#import "./address.gql"
+
+# Customer data
+fragment customer on Customer {
+
+	# Basic customer info
+	id
+	email
+	firstName
+	lastName
+
+	# Default Address
+	defaultAddress { ...address }
+}

@@ -1,0 +1,39 @@
+#import "./address.gql"
+#import "./currency.gql"
+#import "./order-line-item.gql"
+
+fragment order on Order {
+	id
+	cancelReason
+	canceledAt
+	financialStatus
+	fulfillmentStatus
+	lineItems(first:30) {
+		edges {
+			node { ...orderLineItem }
+		}
+	}
+	name
+	orderNumber
+	processedAt
+	shippingAddress { ...address }
+	shippingDiscountAllocations {
+		allocatedAmount { ...currency }
+	}
+	subtotalPrice: subtotalPriceV2 { ...currency }
+	tracking: successfulFulfillments {
+		... on Fulfillment {
+			company: trackingCompany
+			info: trackingInfo {
+				... on FulfillmentTrackingInfo {
+					number
+					url
+				}
+			}
+		}
+	}
+	totalPrice: totalPriceV2 { ...currency }
+	totalRefunded: totalRefundedV2 { ...currency }
+	totalShippingPrice: totalShippingPriceV2 { ...currency }
+	totalTaxPrice: totalTaxV2 { ...currency}
+}

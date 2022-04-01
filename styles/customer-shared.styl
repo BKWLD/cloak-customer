@@ -1,0 +1,116 @@
+.cloak-customer
+	margin-top header-h
+	fluid padding-v, spacing-xxl, spacing-xl
+
+	.customer-form-wrap
+		max-width 800px
+		margin 0 auto
+		border 1px solid blue
+
+	// dashboard view
+	&.account
+
+		h1
+			margin-bottom spacing-s
+
+		.errors, .success
+			display inline-block
+			margin-bottom spacing-s
+			color white
+			padding spacing-xs
+			font-size 11px
+			font-weight bold
+			border-radius 5px
+
+		.errors
+			background DarkRed
+
+		.success
+			background green
+
+		.vf-field
+			display block
+			margin-bottom spacing-xs
+			width 100%
+
+			>>> label
+				fluid-font 'bold', 13, 13, grey
+				display block
+				margin-bottom spacing-xxs
+
+		>>> .vf-error-message
+			display block
+			margin-top 4px
+			fluid-font 'bold', 13px, 11px, DarkRed
+
+		// orders
+		.orders, .addresses, .line-items
+			display flex
+			align-items stretch
+			flex-wrap wrap
+
+		.dashboard-segment
+			margin-bottom spacing-m
+
+	// Layout for the customer pages
+	+on-desktop()
+		&.account
+			display flex
+			align-items flex-start
+
+			>>> .customer-navigation
+				margin-right spacing-s
+
+			.main-column
+				flex-grow 1
+
+	// headline row, flex for button layout
+	.headline
+		display flex
+		align-items center
+		margin-bottom spacing-xs
+		flex-wrap wrap
+
+		h1, h2, h3, h4
+			flex-grow 1
+
+
+	// root indent, so that
+	// these styles get shared
+	// by the modal AND the cards
+	// consider a mixin or moving this, or better namespacing
+	.pill
+		display inline-block
+		border-radius 100px
+		font-size 11px
+		font-weight bold
+		padding-h spacing-xs
+		padding-v 5px
+
+		&.tracking
+			background rgba(pink, .6)
+
+		&.default
+			background rgba(blue, .3)
+
+		&.unfulfilled
+			background rgba(gold, .5)
+
+		&.fulfilled
+			background rgba(green, .2)
+
+
+	// inline plus on the button
+	.inline-plus
+		display flex
+
+		.icon-plus
+			position relative
+			top 2px
+			margin-right spacing-xxs
+
+
+// basic styles for shopify loading pages
+.shopify-loading-page
+	margin-v spacing-l
+	text-align center

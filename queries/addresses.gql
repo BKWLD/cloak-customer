@@ -1,0 +1,15 @@
+#import "./fragments/address.gql"
+
+query fetchAddresses(
+	$accessToken: String!
+	$perPage: Int
+	$afterCursor: String) {
+
+	customer(customerAccessToken: $accessToken) {
+		addresses(first: $perPage, after: $afterCursor) {
+			edges {
+				node { ...address }
+			}
+		}
+	}
+}

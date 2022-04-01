@@ -1,0 +1,18 @@
+#import "./currency.gql"
+
+fragment orderLineItem on OrderLineItem {
+	title
+	discountAllocations {
+		allocatedAmount { ...currency }
+	}
+	discountedTotalPrice { ...currency }
+	originalTotalPrice { ...currency }
+	quantity
+	title
+	variant {
+		... on ProductVariant {
+			title
+			sku
+		}
+	}
+}

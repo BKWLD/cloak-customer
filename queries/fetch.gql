@@ -1,0 +1,8 @@
+#import "./fragments/customer.gql"
+
+# Add a customer (register)
+query fetchCustomer($accessToken: String!) {
+	customer(customerAccessToken: $accessToken) {
+		...customer
+	}
+}

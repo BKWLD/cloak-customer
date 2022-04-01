@@ -1,0 +1,39 @@
+.customer-card
+	width calc(50% - 15px)
+	margin-right spacing-xs
+	margin-bottom spacing-xs
+	border 1px solid ui-grey
+	border-radius radius
+	padding-v spacing-xs
+	padding-h spacing-xs + 5
+	background white
+	word-break break-word
+
+	+on-mobile()
+		width 100%
+
+	div
+		margin-v 4px
+
+	.actions
+		margin-top spacing-xs
+		display flex
+		align-items center
+
+		span, a
+			display block
+			margin-right 5px
+
+	.warning
+		fluid-font 'bold', 14, 12, warning-color
+		margin-top spacing-xxs
+
+	.canceled
+		border 1px solid warning-color
+
+	.inline-cta
+		color primary-color
+		font-style italic
+		text-decoration underline
+		cursor pointer
+		margin-right spacing-xxs

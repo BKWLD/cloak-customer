@@ -1,0 +1,10 @@
+#import "./fragments/access-token.gql"
+#import "./fragments/user-error.gql"
+
+# Login a customer (create access token)
+mutation customerAccessTokenRenew($accessToken: String!) {
+	mutation: customerAccessTokenRenew(customerAccessToken: $accessToken) {
+		data: customerAccessToken { ...accessToken }
+		userErrors { ...userError }
+	}
+}

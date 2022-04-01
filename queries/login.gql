@@ -1,0 +1,10 @@
+#import "./fragments/access-token.gql"
+#import "./fragments/customer-error.gql"
+
+# Login a customer (create access token)
+mutation customerAccessTokenCreate($input: CustomerAccessTokenCreateInput!) {
+	mutation: customerAccessTokenCreate(input: $input) {
+		data: customerAccessToken { ...accessToken }
+		userErrors: customerUserErrors { ...customerUserError }
+	}
+}

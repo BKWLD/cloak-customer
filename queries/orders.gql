@@ -1,0 +1,15 @@
+#import "./fragments/order.gql"
+
+query fetchOrders(
+	$accessToken: String!
+	$perPage: Int
+	$afterCursor: String) {
+
+	customer(customerAccessToken: $accessToken) {
+		orders(first: $perPage, after: $afterCursor) {
+			edges {
+				node { ...order }
+			}
+		}
+	}
+}

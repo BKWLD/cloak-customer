@@ -1,0 +1,7 @@
+#import "./fragments/customer-error.gql"
+
+mutation customerActivate($id: ID!, $input: CustomerActivateInput!) {
+	mutation: customerActivate(id: $id, input: $input) {
+		userErrors: customerUserErrors { ...customerUserError }
+	}
+}

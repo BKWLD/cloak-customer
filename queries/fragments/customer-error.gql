@@ -1,0 +1,7 @@
+# Types of errors in customer queries
+
+fragment customerUserError on CustomerUserError {
+	field
+	message
+	code
+}
