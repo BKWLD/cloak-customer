@@ -1,109 +1,28 @@
 <!-- Customer Registration -->
 <template lang='pug'>
 
-.cloak-customer
+.cloak-customer: .form-wrap
 
-	.max-w-xsmall.customer-form-wrap
+	h1 Register for a new account
 
-		h1 Register for a new account
-
-		form(@submit.prevent='formSubmit' ref='form')
-
-			//- error messages if applicable
-			.errors(v-if='errors.length' role='alert')
-				div(v-for='error, index in errors' :key='index') {{ error }}
-
-			label(for='firstName')
-				span First Name
-				input(
-					type='text'
-					name='firstName'
-					placeholder='First Name'
-					minlength='3'
-					maxlength='100')
-
-			label(for='lastName')
-				span Last Name
-				input(
-					type='text'
-					name='lastName'
-					placeholder='Last Name'
-					minlength='3'
-					maxlength='100')
-
-			label(for='email')
-				span Email Address
-				input(
-					type='email'
-					name='email'
-					placeholder='Email Address'
-					autocomplete
-					required)
-
-			label(for='password')
-				span Password
-				input(
-					type='password'
-					name='password'
-					placeholder='Password'
-					minlength='3'
-					required
-					autocomplete)
-
-
-			.form-actions
-				btn(:loading='loading' type='submit') Register
-
-				ul
-					li
-						span Already have an account?
-						smart-link(to='/account/login') Login
+	form-register
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
+import FormRegister from '../forms/register'
 
 export default
 
-	middleware: 'unauthenticated'
+	components: { FormRegister }
 
-	data: ->
-		loading: false
-		errors: []
+	middleware: 'unauthenticated'
 
 	mounted: ->
 		if @$store.state.customer.email
 			@$router.push '/account'
-
-	methods:
-
-		# Form submit, and register a new customer
-		formSubmit: (e) ->
-			@loading = true
-
-			# reset errors on submit
-			@errors = []
-
-			# prep the data
-			form = @$refs.form
-			firstName = form.elements['firstName'].value
-			lastName = form.elements['lastName'].value
-			email = form.elements['email'].value
-			password = form.elements['password'].value
-
-			if password.length < 5
-				@errors.push 'Password is too short, please make sure it\'s at least 5 characters'
-				return
-
-			# Attempt to submit
-			try
-				login = await @$store.dispatch 'customer/create', { email, password, firstName, lastName }
-				@$router.push '/account'
-			catch e then @errors = e.messages || ['Unknown error']
-			finally @loading = false
-
 
 
 </script>

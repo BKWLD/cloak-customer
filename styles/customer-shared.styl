@@ -2,11 +2,6 @@
 	margin-top header-h
 	fluid padding-v, spacing-xxl, spacing-xl
 
-	.customer-form-wrap
-		max-width 800px
-		margin 0 auto
-		border 1px solid blue
-
 	// dashboard view
 	&.account
 
@@ -74,11 +69,6 @@
 		h1, h2, h3, h4
 			flex-grow 1
 
-
-	// root indent, so that
-	// these styles get shared
-	// by the modal AND the cards
-	// consider a mixin or moving this, or better namespacing
 	.pill
 		display inline-block
 		border-radius 100px
@@ -86,19 +76,7 @@
 		font-weight bold
 		padding-h spacing-xs
 		padding-v 5px
-
-		&.tracking
-			background rgba(pink, .6)
-
-		&.default
-			background rgba(blue, .3)
-
-		&.unfulfilled
-			background rgba(gold, .5)
-
-		&.fulfilled
-			background rgba(green, .2)
-
+		background rgba(blue, .3)
 
 	// inline plus on the button
 	.inline-plus

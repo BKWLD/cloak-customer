@@ -1,59 +1,43 @@
-.cloak-customer .customer-form-wrap
+.cloak-customer .form-wrap
 	margin-h auto
-	border 1px solid grey
+	border 1px solid ui-grey
 	border-radius radius*2
 	fluid padding, spacing-l, spacing-m
 	background white
 	box-shadow 0 0 50px rgba(#ccc, .2)
+	max-width 600px
 
-	input
+	label
+		display block
 		width 100%
 		margin-v 10px
-		padding 10px
+		padding-top 5px // to clear labels
+
+		span
+			display block
+			fluid-font 'bold', 12, 12
+			letter-spacing .05em
+			margin-bottom 3px
+
+
+		>>> input
+			width 100%
+			padding 10px
+			display block
 
 	>>> input
 		margin-bottom spacing-s
 
-	.account-btn-wrap
-		display flex
-		align-items center
-		justify-content flex-start
-		margin-bottom spacing-s
+.form-actions
+	margin-top spacing-m
 
-		>>> .btn
-			margin-right spacing-xs
-			margin-bottom 0
-
-	>>>	#rc_login // Need greater specificity
-			margin 0
-			padding 0
-			display inline-block
-			width auto
-			text-align left
-
-			// Remove styles that were given to `p`s that were expected to be in the
-			// header
-			p
-				font-family inherit
-				font-weight inherit
-				font-size inherit
-				line-height inherit
-				text-align left
-				max-width none
-
-				// Display to the right of forgot password
-				display inline
-
-			a
-				text-decoration underline
-
-.customer-form-actions
 	.btn
 		margin-bottom spacing-xs
 
-	.additional-actions li
+	li
+		margin-top spacing-s
 		margin-bottom spacing-xxs
-		fluid-font 'body', 13, 13, grey
+		fluid-font 'bold', 13, 13, black
 
 		a, .link
 			text-decoration underline
