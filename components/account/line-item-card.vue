@@ -18,6 +18,7 @@
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
+import { productCost } from '../../helpers/helpers'
 
 export default
 
@@ -31,7 +32,7 @@ export default
 		sku: -> @item?.variant?.sku
 		qty: -> @item?.quantity
 		discounts: -> @item?.discountAllocations?.length > 0
-		price: -> @$productCost @item.originalTotalPrice.amount
+		price: -> productCost @item.originalTotalPrice.amount
 		label: -> "Order Line Item #{@title}"
 
 </script>

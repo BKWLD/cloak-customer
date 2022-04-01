@@ -1,5 +1,5 @@
 import * as customerApi from '../services/shopify/customer'
-import { cookie } from '../helpers/storage'
+import { cookie } from '../helpers/helpers'
 
 customerIdKey = 'customerId'
 
@@ -106,6 +106,7 @@ export actions =
 
 	# Logout a customer
 	logout: ({ commit, state: { accessToken } }) ->
+
 		await customerApi.logout { accessToken } if accessToken
 		commit 'clear'
 		cookie.remove customerIdKey

@@ -4,12 +4,12 @@
 <script lang='coffee'>
 export default
 
-	# middleware: 'authenticated'
+	middleware: 'authenticated'
 
 	# Execute code on mount, once old page has been destroyed
 	mounted: ->
 		await @$store.dispatch 'customer/logout'
-		@$router.push '/account'
+		@$router.push '/'
 
 	# Render an empty page
 	render: (create) ->

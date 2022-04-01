@@ -50,17 +50,14 @@
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-# import pageMixin from '@bkwld/cloak/mixins/page'
 import OrderCard from '../account/order-card'
 import AddressCard from '../account/address-card'
 import AddressModal from '../modals/address'
 import CustomerNavigation from '../account/navigation'
 import * as customerApi from '../../services/shopify/customer'
-import { mountComponent } from '../../helpers/dom'
+import { mountComponent } from '../../helpers/helpers'
 
 export default
-
-	# mixins: [ pageMixin ]
 
 	components: {
 		OrderCard
@@ -69,7 +66,7 @@ export default
 		CustomerNavigation
 	}
 
-	# middleware: 'authenticated'
+	middleware: 'authenticated'
 
 	# Fetch orders and addresses from Shopify
 	asyncData: ({ app, store }) ->

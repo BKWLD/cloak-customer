@@ -35,6 +35,11 @@ serverMiddleware: [ '@cloak-app/customer/middleware' ]
 - primary-color
 - on-desktop() and on-mobile() breakpoint helpers
 
+### Expected ENV vars
+- SHOPIFY_URL
+- APP_ENV
+- SHOPIFY_STOREFRONT_TOKEN
+
 ### Module Options
 
 <!-- - `cloak.copy:`

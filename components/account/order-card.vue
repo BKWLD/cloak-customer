@@ -20,7 +20,7 @@ smart-link.customer-card.order(@click='openOrderModal' :aria-label='label')
 
 <script lang='coffee'>
 import OrderModal from '../modals/order'
-import { mountComponent } from '../../helpers/dom'
+import { mountComponent, formatMoney } from '../../helpers/helpers'
 
 export default
 
@@ -34,7 +34,7 @@ export default
 		lowercase: (val) -> val.toLowerCase()
 
 	computed:
-		price: -> @$formatMoney @order.totalPrice.amount
+		price: -> formatMoney @order.totalPrice.amount
 		label: -> "Order #{@order.name}"
 
 	methods:

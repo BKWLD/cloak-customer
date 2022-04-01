@@ -30,7 +30,7 @@
 
 <script lang='coffee'>
 import AddressModal from '../modals/address'
-import { mountComponent } from '../../helpers/dom'
+import { mountComponent } from '../../helpers/helpers'
 import atob from 'atob-lite'
 
 export default

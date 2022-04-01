@@ -30,7 +30,7 @@ modal(:closeable='true' type='standard' v-on:close='closed')
 			h4.style-h4 TRACKING
 			.company {{ order.tracking[0].company }}
 			.number(v-if='order.tracking[0].info[0]')
-				smart-link.pill.tracking(:to='order.tracking[0].info[0].url') {{ order.tracking[0].info[0].number }}
+				a.pill.tracking(:href='order.tracking[0].info[0].url' target='blank') {{ order.tracking[0].info[0].number }}
 
 			hr
 
@@ -52,10 +52,13 @@ modal(:closeable='true' type='standard' v-on:close='closed')
 
 <script lang='coffee'>
 import LineItemCard from '../account/line-item-card'
+import Modal from '@bkwld/vue-modal'
+import '@bkwld/vue-modal/index.css'
+import { formatMoney } from '../../helpers/helpers'
 
 export default
 
-	components: { LineItemCard }
+	components: { LineItemCard, Modal }
 
 	filters:
 		date: (val) -> new Date(val).toLocaleDateString 'en-US'
@@ -66,10 +69,10 @@ export default
 		order: Object
 
 	computed:
-		subtotal: -> @$formatMoney @order.subtotalPrice.amount
-		total: -> @$formatMoney @order.totalPrice.amount
-		tax: -> @$formatMoney @order.totalTaxPrice.amount
-		shipping: -> @$formatMoney @order.totalShippingPrice.amount
+		subtotal: -> formatMoney @order.subtotalPrice.amount
+		total: -> formatMoney @order.totalPrice.amount
+		tax: -> formatMoney @order.totalTaxPrice.amount
+		shipping: -> formatMoney @order.totalShippingPrice.amount
 		hasTracking: -> @order.tracking?[0]?.company?
 
 	methods:

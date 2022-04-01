@@ -106,6 +106,8 @@ modal(:closeable='true' type='standard' ref='modal' removeOnClose)
 </template>
 
 <script lang='coffee'>
+import Modal from '@bkwld/vue-modal'
+import '@bkwld/vue-modal/index.css'
 import AccessibilityBtn from '../accessibility-btn'
 
 # import Vue from 'vue'
@@ -117,7 +119,7 @@ import { clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 export default
 
-	components: { AccessibilityBtn }
+	components: { AccessibilityBtn, Modal }
 
 	props:
 		address: Object
@@ -220,30 +222,29 @@ export default
 
 <style lang='stylus' scoped>
 
-// @import '~library/components/globals/form/forms-shared.styl'
 @import '../../styles/customer-shared.styl'
 @import '../../styles/customer-modal.styl'
 
-// form
-// 	margin-top spacing-s
+form
+	margin-top spacing-s
 
-// .address-field
-// 	margin-bottom spacing-s
+.address-field
+	margin-bottom spacing-s
 
-// .bottom-actions
-// 	display flex
-// 	align-items center
-// 	justify-content space-between
+.bottom-actions
+	display flex
+	align-items center
+	justify-content space-between
 
-// 	span
-// 		fluid-font 'body', 16, 14
-// 		text-decoration underline
+	span
+		fluid-font 'body', 16, 14
+		text-decoration underline
 
-// >>> .bvm-close
-// 	color primary-color
+>>> .bvm-close
+	color primary-color
 
-// .dropdown-container
-// 	>>> select
-// 		dropdown-style()
+.dropdown-container
+	>>> select
+		dropdown-style()
 
 </style>

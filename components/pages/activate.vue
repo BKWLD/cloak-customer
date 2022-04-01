@@ -42,7 +42,7 @@
 <script lang='coffee'>
 export default
 
-	# middleware: 'unauthenticated'
+	middleware: 'unauthenticated'
 
 	data: ->
 		loading: false

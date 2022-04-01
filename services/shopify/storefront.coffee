@@ -15,7 +15,6 @@ class StorefrontError extends Error
 
 # Run an API query
 export execute = (payload) ->
-	console.log process.env.SHOPIFY_URL, process.env.SHOPIFY_STOREFRONT_TOKEN
 	response = await axios
 		url: "#{process.env.SHOPIFY_URL}/api/2022-01/graphql"
 		method: 'post'
