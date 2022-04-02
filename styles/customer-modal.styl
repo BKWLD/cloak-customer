@@ -4,13 +4,34 @@
 	max-height 100vh
 	overflow scroll
 
+	.style-h4
+		margin-bottom 5px
+
 	.headline
+		display flex
 		justify-content space-between
+		padding-top 30px
+
+		.style-h3
+			flex-grow 1
+
+		.order-date
+			fluid-font 'bold', 14, 14, #999
+			margin-bottom 10px
+
+	.half
+		display inline-block
+		width 50%
+
+	.line-items
+		display flex
+		align-items stretch
+		flex-wrap wrap
 
 	hr
 		background ui-grey
 		height 1px
-		margin-v spacing-xs
+		margin-v spacing-m
 		border none
 
 	.pill

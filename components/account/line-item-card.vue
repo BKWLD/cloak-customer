@@ -1,7 +1,7 @@
 <template lang='pug'>
 
 .customer-card(:aria-label='label')
-	.title.style-h5 {{ title }}
+	.title.style-h4 {{ title }}
 	.variant(v-if='variant') {{ variantTitle }} - ({{ sku }})
 
 	.qty-and-price
@@ -47,11 +47,15 @@ export default
 .qty-and-price
 	display flex
 	justify-content space-between
+	padding-top 10px
 
 .price
 	fluid-font 'bold', 18, 16, green
 
 .qty
 	fluid-font 'bold', 18, 16, grey
+
+.variant
+	fluid-font 'bold', 15, 15, grey
 
 </style>

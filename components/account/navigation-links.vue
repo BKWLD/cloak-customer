@@ -85,13 +85,15 @@ ul
 	span
 		cursor pointer
 
-	>>> a, span
+	a, span
 		display block
-		padding spacing-xs
-		transition background base-speed ease-out
+		padding spacing-s
+		transition all base-speed ease-out
 		cursor pointer
+		fluid-font 'bold', 16, 14
 
 		&:hover
-			background ui-grey
+			background primary-color
+			color white
 
 </style>

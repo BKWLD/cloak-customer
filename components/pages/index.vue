@@ -6,10 +6,10 @@
 	//- full dropdown on mobile
 	customer-navigation
 
-	//- for flex layout
-	div.main-column
+	.main-column
 
-		div.dashboard-segment#orders
+		//- orders
+		.dashboard-segment#orders
 
 			.headline
 				h2.style-h2 Orders
@@ -24,14 +24,13 @@
 			div(v-else)
 				p No Orders
 
-		div.dashboard-segment#addresses
+
+		//- addresses
+		.dashboard-segment#addresses
 
 			.headline
 				h2.style-h2 Addresses
-				btn(@click='addNewAddress')
-					.inline-plus
-						.icon-plus
-						span New Address
+				btn(@click='addNewAddress') New Address
 
 
 			//- If addresses, shopw them

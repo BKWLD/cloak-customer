@@ -85,14 +85,6 @@ export default
 			&:not(:first-child)
 				border-top 1px solid ui-grey
 
-		>>> a, span
-			display block
-			padding spacing-xs
-			transition background base-speed ease-out
-
-			&:hover
-				background ui-grey
-
 +on-mobile()
 	.customer-information
 		margin-v spacing-s
@@ -101,7 +93,7 @@ export default
 		background #f0f0f0
 		display flex
 		align-items center
-		padding spacing-xs
+		padding spacing-s
 		cursor pointer
 
 		span

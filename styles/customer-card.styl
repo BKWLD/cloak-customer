@@ -1,13 +1,17 @@
 .customer-card
-	width calc(50% - 15px)
-	margin-right spacing-xs
-	margin-bottom spacing-xs
+	width calc(50% - 20px)
+	margin-right 20px
+	margin-bottom 20px
 	border 1px solid ui-grey
 	border-radius radius
-	padding-v spacing-xs
-	padding-h spacing-xs + 5
+	padding-top spacing-xs
+	padding-bottom spacing-s
+	padding-h spacing-s + 5
 	background white
 	word-break break-word
+
+	.row
+		margin-h 0
 
 	+on-mobile()
 		width 100%
@@ -33,7 +37,7 @@
 
 	.inline-cta
 		color primary-color
-		font-style italic
 		text-decoration underline
 		cursor pointer
 		margin-right spacing-xxs
+		fluid-font 'bold', 14, 14

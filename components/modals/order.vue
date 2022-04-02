@@ -42,10 +42,10 @@ modal(:closeable='true' type='standard' v-on:close='closed')
 				:key='index' :item='item')
 
 		.totals
-			.line Subtotal: {{ subtotal }}
-			.line Tax: {{ tax }}
-			.line Shipping: {{ shipping }}
-			.line.total Total: {{ total }}
+			.total-line Subtotal: {{ subtotal }}
+			.total-line Tax: {{ tax }}
+			.total-line Shipping: {{ shipping }}
+			.total-line.total Total: {{ total }}
 
 
 </template>
@@ -84,31 +84,41 @@ export default
 @import '../../styles/customer-shared.styl'
 @import '../../styles/customer-modal.styl'
 
-// .line-items
-// 	margin-v spacing-s
+.line-items
+	margin-v spacing-s
 
-// .order-date
+.order-date
 
-// 	@media(min-width:400px)
-// 		text-align right
+	@media(min-width:400px)
+		text-align right
 
-// 	span
-// 		display block
-// 		margin-v 3px
-// 		fluid-font 'bold', 14, 14, grey
+	span
+		display block
+		margin-v 3px
+		fluid-font 'bold', 14, 14, grey
 
-// .totals
-// 	text-align right
+.totals
+	text-align right
+	padding 10px
 
-// .line
-// 	margin-top spacing-xxs
-// 	fluid-font 'body', 16, 14
+.total-line
+	margin-top spacing-s
+	fluid-font 'body', 16, 14
 
-// 	&.total
-// 		fluid-font 'bold', 16, 14
+	&.total
+		fluid-font 'bold', 16, 14
 
-// .company
-// 	margin-top 5px
-// 	fluid-font 'bold', 16, 14
+.company
+	margin-top 5px
+	fluid-font 'bold', 16, 14
+
+>>> .bvm-close
+	color black !important
+	top 15px
+	right 15px
+
+>>> .bvm-slot
+	border-radius 10px
+
 
 </style>
