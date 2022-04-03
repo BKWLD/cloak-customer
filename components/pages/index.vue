@@ -92,6 +92,7 @@ export default
 				parent: this
 				propsData:
 					address: {}
+					store: @$store
 
 		# Check if address is the primary address. The ids can't be compared
 		# directly because the ids contain accessToken values in them that change

@@ -30,12 +30,12 @@
 
 <script lang='coffee'>
 import AddressModal from '../modals/address'
-import { mountComponent } from '../../helpers/helpers'
+import { mountComponent, formatPhone } from '../../helpers/helpers'
 import atob from 'atob-lite'
 
 export default
 
-	# components: { AddressModal }
+	components: { AddressModal }
 
 	props:
 		address: Object # The address to be rendered
@@ -50,7 +50,7 @@ export default
 			'disabled' if @loading
 		]
 
-		phone: -> @$formatPhone @address.phone
+		phone: -> formatPhone @address.phone
 
 		addressLabel: ->
 			if @isDefault then return 'Default Address'
@@ -66,8 +66,7 @@ export default
 
 			@loading = true
 			try
-				deleteAddress = await @$store.dispatch 'customer/deleteAddress', { id }
-
+				await @$store.dispatch 'customer/deleteAddress', { id }
 			catch e then @errors = e.messages || ['Unknown error']
 			finally @loading = false
 
@@ -75,7 +74,8 @@ export default
 			await mountComponent AddressModal,
 				parent: this
 				propsData:
-					address: @address
+					address: @address,
+					store: @$store
 
 
 </script>

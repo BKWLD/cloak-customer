@@ -59,9 +59,8 @@ export default
 			email = @$refs.recoveryEmail.$el.querySelector('input').value
 
 			# do the recover action
-			# set loading to false regardless of success or failure
 			try
-				login = await @$store.dispatch 'customer/recoverPassword', { email }
+				await @$store.dispatch 'customer/recoverPassword', { email }
 				@success.push 'An email has been sent with password reset instructions'
 			catch e then @errors = e.messages || ['Unknown error']
 			finally @processing = false

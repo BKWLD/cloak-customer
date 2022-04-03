@@ -87,7 +87,7 @@ export default
 
 			# Attempt to submit
 			try
-				login = await @$store.dispatch 'customer/create', { email, password, firstName, lastName }
+				await @$store.dispatch 'customer/create', { email, password, firstName, lastName }
 				@$router.push '/account'
 			catch e then @errors = e.messages || ['Unknown error']
 			finally @processing = false

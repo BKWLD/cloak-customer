@@ -112,6 +112,7 @@ export getOrders = ({ accessToken, perPage = 12, afterCursor }) ->
 
 # Create an address
 export createAddress = ({ address, accessToken }) ->
+	console.log 'create address'
 	await execute
 		query: addressCreateQuery
 		variables: { accessToken, address }

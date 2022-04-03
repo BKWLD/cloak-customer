@@ -74,7 +74,7 @@ export default
 			# do the logging action
 			# set loading to false regardless of success or failure
 			try
-				login = await @$store.dispatch 'customer/login', { email, password }
+				await @$store.dispatch 'customer/login', { email, password }
 				@$router.push '/account'
 			catch e then @errors = e.messages || ['Unknown error']
 			finally @processing = false

@@ -1,6 +1,6 @@
 <template lang='pug'>
 
-modal.cloak-address-modal(
+modal.cloak-address-modal.customer-modal(
 	:closeable='true'
 	type='standard'
 	ref='modal'
@@ -12,7 +12,7 @@ modal.cloak-address-modal(
 		.errors(v-if='errors.length' role='alert')
 			div(v-for='error, index in errors' :key='index') {{ error }}
 
-		form(@submit='processAddress' ref='form')
+		form(@submit.prevent='processAddress')
 
 			.half-wrap
 				label(for='firstName')
@@ -101,7 +101,7 @@ modal.cloak-address-modal(
 						maxlength='20')
 
 			.bottom-actions
-				.btn(type='submit') {{ btnText }}
+				button(type='submit') {{ btnText }}
 
 
 </template>
@@ -124,10 +124,11 @@ export default
 
 	props:
 		address: Object
+		store: Object
 
 	data: ->
 		errors: []
-		loading: false
+		processing: false
 		edit: false
 
 		currentAddress: {
@@ -143,7 +144,8 @@ export default
 			phone: ''
 		}
 
-	fetch: ->
+	mounted: ->
+
 		if @address.address1
 
 			addr = {
@@ -180,12 +182,10 @@ export default
 		# either edit, or create a new address
 		processAddress: (e) ->
 
-			e.preventDefault()
-
 			@errors = []
 
 			# first check for province, province, and country
-			if !@currentAddress.country && !@currentAddress.province
+			if !@currentAddress.country || !@currentAddress.province
 				@errors.push 'please select a country and state/province'
 				return
 
@@ -208,12 +208,12 @@ export default
 				else
 					@currentAddress.phone = phone
 
-			@loading = true
+			@processing = true
 			try
-				addresses = await @$store.dispatch endpoint, payload
+				await @store.dispatch endpoint, payload
 				@closeModal() # close the modal if successful
 			catch e then @errors = e.messages || ['Unknown error']
-			finally @loading = false
+			finally @processing = false
 
 		closeModal: ->
 			@$refs.modal.close()

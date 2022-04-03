@@ -1,7 +1,7 @@
 <template lang='pug'>
 
 modal(:closeable='true' type='standard' v-on:close='closed')
-	.customer-modal.order-details
+	.customer-modal
 
 		.headline
 			h3.style-h3 Order {{ order.name }}

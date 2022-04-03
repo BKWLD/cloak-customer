@@ -83,3 +83,10 @@ export cookie = new class SharedCookie
 
 	# Remove a cookie
 	remove: (key) -> Cookies.remove key + @suffix, domain: currentApexDomain()
+
+
+export formatPhone = (phoneNumberString) ->
+  cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+  match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+  if match
+    return '(' + match[1] + ') ' + match[2] + '-' + match[3]
