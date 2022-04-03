@@ -2,6 +2,9 @@
 
 .cloak-customer.account.max-w
 
+	//- hold modal, so it's within this
+	div(ref='modalContainer')
+
 	//- sidebar on desktop
 	//- full dropdown on mobile
 	customer-navigation

@@ -1,7 +1,10 @@
 <template lang='pug'>
 
-modal(:closeable='true' type='standard' ref='modal' removeOnClose)
-	.customer-modal.address-details
+modal.cloak-address-modal(
+	:closeable='true'
+	type='standard'
+	ref='modal'
+	removeOnClose)
 
 		h2.style-h3(v-if='address.address1') Edit Address
 		h2.style-h3(v-else) New Address
@@ -69,13 +72,13 @@ modal(:closeable='true' type='standard' ref='modal' removeOnClose)
 					v-model='currentAddress.city'
 					maxlength='100')
 
-			.dropdown-container.address-field
+			.dropdown-container
 				.icon-caret
-				//- country-select(v-model='currentAddress.country' :country='currentAddress.country' topCountry='US')
+				country-select(v-model='currentAddress.country' :country='currentAddress.country' topCountry='US')
 
-			.dropdown-container.address-field
+			.dropdown-container
 				.icon-caret
-				//- region-select(v-model='currentAddress.province' :country='currentAddress.country' :region='currentAddress.province')
+				region-select(v-model='currentAddress.province' :country='currentAddress.country' :region='currentAddress.province')
 
 			.half-wrap
 				label(for='zip')
@@ -99,8 +102,6 @@ modal(:closeable='true' type='standard' ref='modal' removeOnClose)
 
 			.bottom-actions
 				.btn(type='submit') {{ btnText }}
-				accessibility-btn(v-on:click='closeModal()' label='close address window')
-					span Cancel
 
 
 </template>
@@ -110,9 +111,9 @@ import Modal from '@bkwld/vue-modal'
 import '@bkwld/vue-modal/index.css'
 import AccessibilityBtn from '../accessibility-btn'
 
-# import Vue from 'vue'
-# import vueCountryRegionSelect from 'vue-country-region-select'
-# Vue.use(vueCountryRegionSelect)
+import Vue from 'vue'
+import vueCountryRegionSelect from 'vue-country-region-select'
+Vue.use(vueCountryRegionSelect)
 
 import { clearAllBodyScrollLocks } from 'body-scroll-lock'
 
@@ -225,26 +226,50 @@ export default
 @import '../../styles/customer-shared.styl'
 @import '../../styles/customer-modal.styl'
 
-form
-	margin-top spacing-s
+>>>
+	.bvm-contents
+		text-align left
+		padding spacing-m
 
-.address-field
-	margin-bottom spacing-s
+	.bvm-slot
+		border-radius 10px
 
-.bottom-actions
-	display flex
-	align-items center
-	justify-content space-between
-
-	span
-		fluid-font 'body', 16, 14
-		text-decoration underline
-
->>> .bvm-close
-	color primary-color
+	.bvm-close
+		color primary-color
+		top 20px
+		right 20px
 
 .dropdown-container
+	position relative
+	display inline-block
+	width 100%
+	padding 10px
+	margin-v spacing-s
+	border 1px solid primary-color
+	min-height 44px
+
+	.icon-caret
+		position absolute
+		font-size 10px
+		top 50%
+		right spacing-s
+		transform translateY(-40%)
+
 	>>> select
-		dropdown-style()
+		border none
+		appearance none
+		expand()
+		cursor pointer
+		text-overflow ellipsis
+		padding-left spacing-s
+
+	.visual-label
+		label-style()
+		fluid top, -32, -26
+		opacity 1
+
+	>>> select:required:invalid
+		color blue
+
 
 </style>
