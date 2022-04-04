@@ -10,17 +10,14 @@ Cloak components for rendering Customer components.  [View demo](https://cloak-c
 
 1. Install with `yarn add @cloak-app/customer`
 2. Add to `nuxt.config` with `buildModules: ['@cloak-app/customer/nuxt']`
-3. Add middleware to nuxt-config
-```
-# Disable SSR on account pages
-serverMiddleware: [ '@cloak-app/customer/middleware' ]
-```
-4. Set Shopify admin api permissions
+3. Copy 'authenticated' and 'unauthenticated' from middlewares the middlewares folder of the project
+4. Make sure components is set to true in the project's nuxt.config so the components can be auto-loaded
+5. Set Shopify admin api permissions
 - create a private 'develop' app
 - allow admin api access & allow permission to
 - write_customers
 - read_customers
-5. Make sure accounts are at least set to optional on the shop (/admin/settings/checkout)
+6. Make sure accounts are at least set to optional on the shop (/admin/settings/checkout)
 
 ### Project Dependencies
 
@@ -33,6 +30,7 @@ serverMiddleware: [ '@cloak-app/customer/middleware' ]
 - spacing (xs - xxl)
 - ui-grey
 - primary-color
+- ui-error
 - on-desktop() and on-mobile() breakpoint helpers
 
 ### Expected ENV vars

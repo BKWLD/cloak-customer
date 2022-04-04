@@ -1,39 +1,35 @@
 <template lang='pug'>
 
-.cloak-customer
+.cloak-customer: .max-w-xsmall
 
-	.max-w-xsmall.customer-form-wrap
+	form.cloak-customer-form(@submit.prevent='formSubmit')
 
-		h1 Activate your account
+		//- error messages if applicable
+		.errors(v-if='errors.length' role='alert')
+			div(v-for='error, index in errors' :key='index') {{ error }}
 
-		form(@submit.prevent='formSubmit')
+		//- success message with prompt to login
+		.success(v-if='success')
+			h4.style-h4 Successfully Activated
+			btn: smart-link(to='/account') Login Now
 
-			//- error messages if applicable
-			.errors(v-if='errors.length' role='alert')
-				div(v-for='error, index in errors' :key='index') {{ error }}
+		div(v-else)
 
-			//- success message with prompt to login
-			.success(v-if='success')
-				h4.style-h4 Successfully Activated
-				btn: smart-link(to='/account') Login Now
+			label(for='password')
+				span New Password
+				input(
+					name='password'
+					placeholder='New Password'
+					type='password'
+					required
+					v-model='form.password')
 
-			div(v-else)
+			.form-actions
+				btn(:loading='loading' type='submit') Set New Password
 
-				label(for='password')
-					span New Password
-					input(
-						name='password'
-						placeholder='New Password'
-						type='password'
-						required
-						v-model='form.password')
-
-				.form-actions
-					btn(:loading='loading' type='submit') Set New Password
-
-					ul
-						li
-							smart-link(to='/account/login') Return to login
+				ul
+					li
+						smart-link(to='/account/login') Return to login
 
 </template>
 
@@ -77,7 +73,7 @@ export default
 
 <style lang='stylus' scoped>
 
-@import '../../styles/customer-shared.styl'
-@import '../../styles/customer-form.styl'
+@import '../styles/customer-shared.styl'
+@import '../styles/customer-form.styl'
 
 </style>

@@ -1,35 +1,27 @@
+<!-- Customer Registration -->
 <template lang='pug'>
 
-.cloak-customer: .form-wrap
+.cloak-customer
 
-	h1 Login to your account
-
-	form-login(v-if='!recover' can-register v-on:toggle='toggleForm')
-	form-recover(v-else v-on:toggle='toggleForm')
+	form-register(can-login)
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-import FormLogin from '../forms/login'
-import FormRecover from '../forms/recover'
+import FormRegister from '../components/forms/register'
 
 export default
 
+	components: { FormRegister }
+
 	middleware: 'unauthenticated'
 
-	components: { FormLogin, FormRecover}
-
-	data: ->
-		recover: false
-
 	mounted: ->
-		if @$store.state.customer?.email
+		if @$store.state.customer.email
 			@$router.push '/account'
 
-	methods:
-		toggleForm: -> @recover = !@recover
 
 </script>
 
@@ -37,7 +29,6 @@ export default
 
 <style lang='stylus' scoped>
 
-@import '../../styles/customer-shared.styl'
-@import '../../styles/customer-form.styl'
+@import '../styles/customer-shared.styl'
 
 </style>

@@ -1,6 +1,8 @@
 <template lang='pug'>
 
-form(@submit.prevent='onSubmit')
+form.cloak-customer-form(@submit.prevent='onSubmit')
+
+	h2.style-h2 Reset your password
 
 	//- error messages if applicable
 	.errors(v-if='errors.length' role='alert')

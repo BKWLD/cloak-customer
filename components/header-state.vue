@@ -1,28 +1,23 @@
-<!-- Customer Registration -->
 <template lang='pug'>
 
-.cloak-customer: .form-wrap
+.account-links
+	smart-link(to='/account' v-if='customer') My Account
+	smart-link(to='/account/login' v-else) Login
 
-	h1 Register for a new account
-
-	form-register
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-import FormRegister from '../forms/register'
 
 export default
 
-	components: { FormRegister }
+	data: ->
+		loaded: false
 
-	middleware: 'unauthenticated'
-
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
+	computed:
+		customer: -> @$store.state.customer?.email
 
 
 </script>
@@ -30,8 +25,5 @@ export default
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <style lang='stylus' scoped>
-
-@import '../../styles/customer-shared.styl'
-@import '../../styles/customer-form.styl'
 
 </style>

@@ -52,12 +52,18 @@
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-import OrderCard from '../account/order-card'
-import AddressCard from '../account/address-card'
-import AddressModal from '../modals/address'
-import CustomerNavigation from '../account/navigation'
-import * as customerApi from '../../services/shopify/customer'
-import { mountComponent } from '../../helpers/helpers'
+import OrderCard from '../components/account/order-card'
+import AddressCard from '../components/account/address-card'
+import AddressModal from '../components/modals/address'
+import CustomerNavigation from '../components/account/navigation'
+import * as customerApi from '../services/shopify/customer'
+import { mountComponent } from '../helpers/helpers'
+
+import Vue from 'vue'
+import vueCountryRegionSelect from 'vue-country-region-select'
+Vue.use(vueCountryRegionSelect)
+
+
 
 export default
 
@@ -106,6 +112,6 @@ export default
 
 <style lang='stylus' scoped>
 
-@import '../../styles/customer-shared.styl'
+@import '../styles/customer-shared.styl'
 
 </style>

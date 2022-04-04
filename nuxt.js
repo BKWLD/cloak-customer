@@ -7,13 +7,10 @@ export default function() {
 
 	this.addServerMiddleware(join(__dirname, './middleware/client-only-pages.js'))
 
-	// Tried this, they worked when I put them in the product
-	// here it was trying to load coffee and erroring
-	// this.addServerMiddleware(join(__dirname, './middleware/authenticated.coffee'))
-	// this.addServerMiddleware(join(__dirname, './middleware/unauthenticated.coffee'))
-
 	// Allow components to be auto-imported by Nuxt
 	this.nuxt.hook('components:dirs', dirs => {
+
+		console.log('in dir');
 
 		// components
 		dirs.push({
@@ -41,11 +38,11 @@ export default function() {
 		})
 
 		let customRoutes = [
-			{ name: 'customer-login', path: '/account/login', component: 'components/pages/login.vue' },
-			{ name: 'customer-logout', path: '/account/logout', component: 'components/pages/logout.vue' },
-			{ name: 'customer-register', path: '/account/register', component: 'components/pages/register.vue' },
-			{ name: 'customer-account', path: '/account', component: 'components/pages/index.vue' },
-			{ name: 'customer-reset', path: '/account/reset', component: 'components/pages/reset.vue' }
+			{ name: 'customer-login', path: '/account/login', component: 'pages/login.vue' },
+			{ name: 'customer-logout', path: '/account/logout', component: 'pages/logout.vue' },
+			{ name: 'customer-register', path: '/account/register', component: 'pages/register.vue' },
+			{ name: 'customer-account', path: '/account', component: 'pages/index.vue' },
+			{ name: 'customer-reset', path: '/account/reset', component: 'pages/reset.vue' }
 		]
 
 		customRoutes.forEach((route) => {

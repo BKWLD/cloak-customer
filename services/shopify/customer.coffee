@@ -44,10 +44,10 @@ class CustomerMutationError extends Error
 		@messages = messages
 
 # Register a new customer
-export create = ({ email, password, firstName, lastName }) ->
+export create = ({ email, password, firstName, lastName, tags }) ->
 	executeCustomerMutation
 		query: createQuery
-		variables: input: { email, password, firstName, lastName }
+		variables: input: { email, password, firstName, lastName, tags }
 
 # Trigger a password reset
 export recoverPassword = ({ email }) ->
@@ -112,7 +112,6 @@ export getOrders = ({ accessToken, perPage = 12, afterCursor }) ->
 
 # Create an address
 export createAddress = ({ address, accessToken }) ->
-	console.log 'create address'
 	await execute
 		query: addressCreateQuery
 		variables: { accessToken, address }

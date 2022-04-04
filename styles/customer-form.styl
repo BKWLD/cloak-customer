@@ -1,4 +1,4 @@
-.cloak-customer .form-wrap
+.cloak-customer-form
 	margin-h auto
 	border 1px solid ui-grey
 	border-radius radius*2
@@ -7,3 +7,70 @@
 	box-shadow 0 0 50px rgba(#ccc, .2)
 	max-width 600px
 
+	.half-wrap
+		label
+			display inline-block
+			width calc(50% - 10px)
+
+			&:first-child
+				margin-right 10px
+
+			&:last-child
+				margin-left 10px
+
+	label
+		display block
+		width 100%
+		margin-v 10px
+		padding-top 5px // to clear labels
+		text-align left
+
+		span
+			display block
+			fluid-font 'bold', 12, 12
+			letter-spacing .05em
+			margin-bottom 3px
+
+
+		>>> input
+			width 100%
+			padding 10px
+			display block
+			margin-bottom spacing-s
+
+
+	.form-actions
+		margin-top spacing-m
+
+		.btn
+			margin-bottom spacing-xs
+
+		li
+			margin-top spacing-s
+			margin-bottom spacing-xxs
+			fluid-font 'bold', 13, 13, black
+
+			a, .link
+				text-decoration underline
+				color primary-color
+				display inline-block
+				cursor pointer
+				&:not(:first-child)
+					margin-left 4px
+
+
+	// error and success messages
+	.errors, .success
+		display inline-block
+		margin-bottom spacing-s
+		color white
+		padding spacing-xs
+		font-size 11px
+		font-weight bold
+		border-radius 5px
+
+	.errors
+		background DarkRed
+
+	.success
+		background green

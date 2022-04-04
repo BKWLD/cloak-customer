@@ -11,6 +11,7 @@ export state = ->
 	firstName: null
 	lastName: null
 	defaultAddress: null
+	tags: null
 
 	# Shopify auth data
 	accessToken: null
@@ -48,8 +49,8 @@ export mutations =
 export actions =
 
 	# Create a customer then log them in
-	create: ({ commit, dispatch }, { email, password, firstName, lastName }) ->
-		await customerApi.create { email, password, firstName, lastName }
+	create: ({ commit, dispatch }, { email, password, firstName, lastName, tags }) ->
+		await customerApi.create { email, password, firstName, lastName, tags }
 		await dispatch 'login', { email, password }
 
 	# trigger a password reset email

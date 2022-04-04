@@ -3,7 +3,9 @@
 //- The password recovery form
 //- Don't make this a form element, so chrome doesn't try to
 //- autocomplete the field
-form(@submit.prevent='onSubmit' v-else)
+form.cloak-customer-form(@submit.prevent='onSubmit' v-else)
+
+	h2.style-h2 Recover your password
 
 	//- error messages if applicable
 	.errors(v-if='errors.length' role='alert')

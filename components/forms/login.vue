@@ -1,6 +1,8 @@
 <template lang='pug'>
 
-form(@submit.prevent='onSumbit' ref='form')
+form.cloak-customer-form(@submit.prevent='onSumbit' ref='form')
+
+	h2.style-h2 Login to your account
 
 	//- error messages if applicable
 	.errors(v-if='errors.length' role='alert')
