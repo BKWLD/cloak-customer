@@ -51,6 +51,7 @@ export default
 
 		# trigger an email to recover your password
 		onSubmit: (e) ->
+			console.log 'bro'
 			@processing = true
 
 			# reset messages
@@ -58,14 +59,18 @@ export default
 			@success = []
 
 			# define data
-			email = @$refs.recoveryEmail.$el.querySelector('input').value
+			console.log @$refs.recoveryEmail
+			return
+			# email = @$refs.recoveryEmail.querySelector('input').value
 
-			# do the recover action
-			try
-				await @$store.dispatch 'customer/recoverPassword', { email }
-				@success.push 'An email has been sent with password reset instructions'
-			catch e then @errors = e.messages || ['Unknown error']
-			finally @processing = false
+			# # do the recover action
+			# try
+			# 	console.log 'in'
+			# 	return
+			# 	await @$store.dispatch 'customer/recoverPassword', { email }
+			# 	@success.push 'An email has been sent with password reset instructions'
+			# catch e then @errors = e.messages || ['Unknown error']
+			# finally @processing = false
 
 		toggle: ->
 			@$emit 'toggle'

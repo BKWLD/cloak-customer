@@ -9,6 +9,7 @@ export default
 	# Execute code on mount, once old page has been destroyed
 	mounted: ->
 		await @$store.dispatch 'customer/logout'
+		console.log 'logged out, go home'
 		@$router.push '/'
 
 	# Render an empty page
