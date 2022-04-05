@@ -81,6 +81,7 @@ export default
 		{ accessToken } = store.state.customer
 
 		await store.dispatch 'customer/fetchAddresses'
+		await store.commit 'layout/setGlobalElementVisibility', false
 
 		orders = await customerApi.getOrders { accessToken }
 		return { orders }
@@ -98,7 +99,6 @@ export default
 				parent: this
 				propsData:
 					address: {}
-					store: @$store
 
 		# Check if address is the primary address. The ids can't be compared
 		# directly because the ids contain accessToken values in them that change

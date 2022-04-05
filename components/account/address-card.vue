@@ -74,9 +74,7 @@ export default
 			await mountComponent AddressModal,
 				parent: this
 				propsData:
-					address: @address,
-					store: @$store
-
+					address: @address
 
 </script>
 

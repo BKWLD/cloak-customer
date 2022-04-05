@@ -12,7 +12,7 @@ modal.cloak-address-modal.customer-modal(
 		.errors(v-if='errors.length' role='alert')
 			div(v-for='error, index in errors' :key='index') {{ error }}
 
-		form(@submit.prevent='processAddress')
+		form.customer-form(@submit.prevent='processAddress')
 
 			.half-wrap
 				label(for='firstName')
@@ -124,7 +124,6 @@ export default
 
 	props:
 		address: Object
-		store: Object
 
 	data: ->
 		errors: []
@@ -210,7 +209,7 @@ export default
 
 			@processing = true
 			try
-				await @store.dispatch endpoint, payload
+				await @$store.dispatch endpoint, payload
 				@closeModal() # close the modal if successful
 			catch e then @errors = e.messages || ['Unknown error']
 			finally @processing = false
