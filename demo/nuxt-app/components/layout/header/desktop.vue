@@ -11,7 +11,7 @@ detachable-header.layout-header-desktop(:height='height')
 			nuxt-link(to='/') demo
 
 		.right
-			//- Right aligned links
+			cloak-customer-header-state
 
 </template>
 

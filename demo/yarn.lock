@@ -981,6 +981,25 @@
   resolved "https://registry.yarnpkg.com/@bkwld/light-or-dark/-/light-or-dark-1.0.1.tgz#23a365153a75d14cc6b2432a8cd338f5b489165d"
   integrity sha512-iPE6K+Z14D+kaJaymJ8w9g9Lbhc+ylf0VWH61KwL1k5AwV0OEjtKQs9DFsnORV0sayfyiznp7DOKIkl8w/tG/w==
 
+"@bkwld/vue-modal@BKWLD/vue-modal#9dc40c6":
+  version "1.1.3"
+  resolved "https://codeload.github.com/BKWLD/vue-modal/tar.gz/9dc40c6d9e813200014c7cf02fd3ff958249c383"
+  dependencies:
+    body-scroll-lock "^4.0.0-beta.0"
+    bukwild-stylus-library "^3.1.0"
+    webpack-node-externals "^3.0.0"
+
+"@cloak-app/customer@BKWLD/cloak-customer":
+  version "1.0.0"
+  resolved "https://codeload.github.com/BKWLD/cloak-customer/tar.gz/236e458ff55ad0c7175b797d98dd8f907aff3f9b"
+  dependencies:
+    "@bkwld/vue-modal" BKWLD/vue-modal#9dc40c6
+    "@nuxt/utils" "^2.15.8"
+    js-cookie "^2.2.1"
+    vue "^2.6.11"
+    vue-country-region-select "^2.0.16"
+    vuex "^3.1.3"
+
 "@contentful/rich-text-types@^14.1.2":
   version "14.1.2"
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-14.1.2.tgz#33162fdbf427891122a96030f806ca9a9cf0e844"
@@ -1349,7 +1368,7 @@
     "@types/webpack-hot-middleware" "2.25.4"
     sass-loader "10.1.1"
 
-"@nuxt/utils@2.15.8":
+"@nuxt/utils@2.15.8", "@nuxt/utils@^2.15.8":
   version "2.15.8"
   resolved "https://registry.yarnpkg.com/@nuxt/utils/-/utils-2.15.8.tgz#0c3594f01be63ab521583904cafd32215b719d4c"
   integrity sha512-e0VBarUbPiQ4ZO1T58puoFIuXme7L5gk1QfwyxOONlp2ryE7aRyZ8X/mryuOiIeyP64c4nwSUtN7q9EUWRb7Lg==
@@ -2761,6 +2780,11 @@ bn.js@^5.0.0, bn.js@^5.1.1:
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.2.0.tgz#358860674396c6997771a9d051fcc1b57d4ae002"
   integrity sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw==
 
+body-scroll-lock@^4.0.0-beta.0:
+  version "4.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-4.0.0-beta.0.tgz#4f78789d10e6388115c0460cd6d7d4dd2bbc4f7e"
+  integrity sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==
+
 boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
@@ -2932,7 +2956,7 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
-bukwild-stylus-library@^3.0.0:
+bukwild-stylus-library@^3.0.0, bukwild-stylus-library@^3.1.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/bukwild-stylus-library/-/bukwild-stylus-library-3.2.1.tgz#abea66a731d3339938daeb2dfc33bfa473bac1d4"
   integrity sha512-MgaFjTgd0oJO2dwOTzKMig0bSMjzqndhNOCkV05rsPoNlmY/8weCdWFVWUwujGWMTdgRqYsa+oVjGy76KGBwLA==
@@ -6020,6 +6044,11 @@ jiti@^1.9.2:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.13.0.tgz#3cdfc4e651ca0cca4c62ed5e47747b5841d41a8e"
   integrity sha512-/n9mNxZj/HDSrincJ6RP+L+yXbpnB8FybySBa+IjIaoH9FIxBbrbRT5XUbe8R7zuVM2AQqNMNDDqz0bzx3znOQ==
+
+js-cookie@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
+  integrity sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==
 
 js-stringify@^1.0.1:
   version "1.0.2"
@@ -10534,6 +10563,13 @@ vue-client-only@^2.0.0:
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.1.0.tgz#1a67a47b8ecacfa86d75830173fffee3bf8a4ee3"
   integrity sha512-vKl1skEKn8EK9f8P2ZzhRnuaRHLHrlt1sbRmazlvsx6EiC3A8oWF8YCBrMJzoN+W3OnElwIGbVjsx6/xelY1AA==
 
+vue-country-region-select@^2.0.16:
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/vue-country-region-select/-/vue-country-region-select-2.0.16.tgz#309c0d1867c6434398398bc46db2810c310b917f"
+  integrity sha512-nVeBXrC12VMaC8PBJHy3oVOcrLTeN0yJ5lCVEcI3HBD9N1zk2Z0ltBwyYd+ertGhwqDk1g5TUy56jVqX6lTTdw==
+  dependencies:
+    vue "^2.5.17"
+
 vue-detachable-header@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/vue-detachable-header/-/vue-detachable-header-0.2.0.tgz#b83d866c3eb48f574f006f2140be798820298eb1"
@@ -10626,12 +10662,12 @@ vue-visual@^2.0.0:
   resolved "https://registry.yarnpkg.com/vue-visual/-/vue-visual-2.6.0.tgz#083c6f83d755d59819db63e10ad249deef4da358"
   integrity sha512-clCxWyA8YwjFOUSR+9vXXUomBto4v/+PqP/0DXtsIvOAACnKyDXtKRvHZzTY0EOfNinWZ/7NzTZ0aXgeYhJpVg==
 
-vue@^2.6.12:
+vue@^2.5.17, vue@^2.6.11, vue@^2.6.12:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
 
-vuex@^3.6.2:
+vuex@^3.1.3, vuex@^3.6.2:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
   integrity sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==
@@ -10708,7 +10744,7 @@ webpack-dev-middleware@^4.2.0:
     range-parser "^1.2.1"
     schema-utils "^3.0.0"
 
-"webpack-graphql-loader@github:gpoitch/graphql-loader#gp/refresh":
+webpack-graphql-loader@gpoitch/graphql-loader#gp/refresh:
   version "1.0.2"
   resolved "https://codeload.github.com/gpoitch/graphql-loader/tar.gz/42f0f990a6132ccd5e284d0e6cfeade12728dba2"
   dependencies:

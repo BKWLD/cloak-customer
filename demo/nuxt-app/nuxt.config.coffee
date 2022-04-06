@@ -15,6 +15,10 @@ module.exports = mergeConfig boilerplate,
 		'vue-balance-text/nuxt/module'
 	]
 
+	buildModules: [
+		'@cloak-app/customer/nuxt'
+	]
+
 	# Expect specially slug-ed towers to exist that will be loaded by error.vue
 	generate: fallback: true
 

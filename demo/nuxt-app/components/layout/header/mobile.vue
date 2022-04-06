@@ -9,7 +9,7 @@ detachable-header.layout-header-mobile(:height='height')
 			nuxt-link(to='/') demo
 
 		.right
-			//- Probably a hamburger
+			cloak-customer-header-state
 
 </template>
 
