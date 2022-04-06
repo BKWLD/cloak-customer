@@ -7,7 +7,5 @@ export mutations =
 		state.hydrated = true
 
 export actions =
-
-	# Get navigation data fresh from SSG or fresh depending on the app env
 	fetch: ({ commit }) ->
-		console.log 'bro'
+		console.log 'fetch'

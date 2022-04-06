@@ -25,6 +25,32 @@ module.exports = mergeConfig boilerplate,
 		{ src: 'plugins/country-region-select' }
 	]
 
+	build:
+
+		# Always show ouput
+		quiet: false
+
+		# Useful to disable when debugging polyfill issues
+		# optimization: minimize: false
+
+		# External code that needs transpiling
+		transpile: [
+			'library' # The workspace
+		]
+
+		# ExtractCSS
+		extractCSS: true unless isDev
+
+		# PostCSS configuration
+		postcss: plugins:
+
+			# Disable CSS Nano's Calc transfrom, it beefs with my fluid() function
+			cssnano: do ->
+				if isDev then false
+				else preset: ['default', calc: false ]
+
+
+
 	buildModules: [
 		'@cloak-app/customer/nuxt'
 	]
