@@ -1,7 +1,8 @@
 <template lang='pug'>
 
 .cloak-customer
-	forms-reset
+
+	cloak-customer-forms-reset
 
 </template>
 
@@ -9,10 +10,7 @@
 
 <script lang='coffee'>
 
-export default
-
-	data: ->
-		loaded: true
+# export default
 
 </script>
 

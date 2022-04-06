@@ -1,31 +1,40 @@
-<!-- Customer Registration -->
+<!-- Mobile header -->
+
 <template lang='pug'>
 
-.cloak-customer
+detachable-header.layout-header-mobile(:height='height')
+	header.max-w-full: .columns.max-w-medium
 
-	cloak-customer-forms-register(can-login)
+		.left
+			nuxt-link(to='/') demo
+
+		.right
+			//- Probably a hamburger
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-
+import DetachableHeader from 'vue-detachable-header'
+import 'vue-detachable-header/index.css'
+import dimensions from '~/assets/vars/dimensions'
 export default
 
-	middleware: 'unauthenticated'
+	components: { DetachableHeader }
 
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
-
+	data: -> height: parseInt dimensions['header-h-mobile']
 
 </script>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+<style src='./header.styl' lang='stylus' scoped></style>
 <style lang='stylus' scoped>
 
-@import '../styles/customer-shared.styl'
+.layout-header-mobile
+	+tablet-up()
+		display none
+
 
 </style>

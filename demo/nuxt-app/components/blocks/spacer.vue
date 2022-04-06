@@ -1,24 +1,22 @@
-<!-- Customer Registration -->
+<!-- Spacer block -->
+
 <template lang='pug'>
 
-.cloak-customer
-
-	cloak-customer-forms-register(can-login)
+section.spacer(:class='classes')
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-
 export default
 
-	middleware: 'unauthenticated'
+	props: block: Object
 
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
+	computed:
 
+		# Root classes
+		classes: -> "height-#{@block.height}"
 
 </script>
 
@@ -26,6 +24,14 @@ export default
 
 <style lang='stylus' scoped>
 
-@import '../styles/customer-shared.styl'
+.spacer
+	&.height-s
+		fluid-space height, 's'
+	&.height-m
+		fluid-space height, 'm'
+	&.height-l
+		fluid-space height, 'l'
+	&.height-xl
+		fluid-space height, 'xl'
 
 </style>

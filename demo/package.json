@@ -1,0 +1,12 @@
+{
+  "name": "demo",
+  "author": "Bukwild",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "library",
+    "nuxt-app",
+    "shopify-theme"
+  ]
+}

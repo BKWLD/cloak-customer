@@ -7,7 +7,7 @@
 
 	//- sidebar on desktop
 	//- full dropdown on mobile
-	customer-navigation
+	cloak-customer-account-navigation
 
 	.main-column
 
@@ -19,7 +19,7 @@
 
 			//- If orders, show them
 			div.orders(v-if='orders.length > 0')
-				order-card(
+				cloak-customer-account-order-card(
 					v-for='order in orders'
 					:key='order.id'
 					:order='order')
@@ -38,7 +38,7 @@
 
 			//- If addresses, shopw them
 			.addresses(v-if='addresses.length > 0')
-				address-card(
+				cloak-customer-account-address-card(
 					v-for='address in addresses' :key='address.id'
 					:is-default='isDefault(address)'
 					:address='address')
@@ -52,10 +52,7 @@
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-import OrderCard from '../components/account/order-card'
-import AddressCard from '../components/account/address-card'
 import AddressModal from '../components/modals/address'
-import CustomerNavigation from '../components/account/navigation'
 import * as customerApi from '../services/shopify/customer'
 import { mountComponent } from '../helpers/helpers'
 
@@ -67,10 +64,7 @@ Vue.use(vueCountryRegionSelect)
 export default
 
 	components: {
-		OrderCard
-		AddressCard
 		AddressModal
-		CustomerNavigation
 	}
 
 	middleware: 'authenticated'

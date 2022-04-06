@@ -1,31 +1,33 @@
-<!-- Customer Registration -->
+<!-- An image or ambient video that may launch a video player  -->
+
 <template lang='pug'>
 
-.cloak-customer
+section.media-asset(:class='classes')
 
-	cloak-customer-forms-register(can-login)
+	//- The asset
+	cloak-visual(
+		sizes='100vw'
+		:image='block.image'
+		:video='block.video')
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-
 export default
 
-	middleware: 'unauthenticated'
+	props: block: Object
 
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
+	computed:
 
+		# Apply max-width choice
+		classes: -> @block.maxWidth
 
 </script>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <style lang='stylus' scoped>
-
-@import '../styles/customer-shared.styl'
 
 </style>

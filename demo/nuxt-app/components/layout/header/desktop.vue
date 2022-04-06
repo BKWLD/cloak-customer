@@ -1,31 +1,41 @@
-<!-- Customer Registration -->
+<!-- Desktop header -->
+
 <template lang='pug'>
 
-.cloak-customer
+detachable-header.layout-header-desktop(:height='height')
+	header.max-w-full: .columns.max-w-medium
+		.left
+			//- Left aligned links
 
-	cloak-customer-forms-register(can-login)
+		.center
+			nuxt-link(to='/') demo
+
+		.right
+			//- Right aligned links
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-
+import DetachableHeader from 'vue-detachable-header'
+import 'vue-detachable-header/index.css'
+import dimensions from '~/assets/vars/dimensions'
 export default
 
-	middleware: 'unauthenticated'
+	components: { DetachableHeader }
 
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
-
+	data: -> height: parseInt dimensions['header-h']
 
 </script>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+<style src='./header.styl' lang='stylus' scoped></style>
 <style lang='stylus' scoped>
 
-@import '../styles/customer-shared.styl'
+.layout-header-desktop
+	+tablet-down()
+		display none
 
 </style>

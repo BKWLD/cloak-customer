@@ -1,31 +1,29 @@
-<!-- Customer Registration -->
+<!-- Layout footer -->
+
 <template lang='pug'>
 
-.cloak-customer
-
-	cloak-customer-forms-register(can-login)
+footer.layout-footer: .max-w Footer content
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-
-export default
-
-	middleware: 'unauthenticated'
-
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
-
-
+# export default
+# 	components:
+# 	props: []
+# 	data: ->
+# 	computed:
+# 	watch:
+# 	methods:
 </script>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <style lang='stylus' scoped>
 
-@import '../styles/customer-shared.styl'
+.layout-footer
+	border-top 1px solid black
+	fluid-space padding-v, 'm'
 
 </style>

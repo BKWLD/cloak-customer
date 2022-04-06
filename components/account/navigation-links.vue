@@ -33,9 +33,6 @@ export default
 		customer: @$store.state.customer
 		success: []
 
-	# Hydrate the cart so we can get the cart id for the subscriptionsUrl
-	# mounted: -> @$store.dispatch 'cart/fetchUnlessHydrated'
-
 	computed:
 		email: -> @$store.state.customer.email
 
@@ -72,6 +69,10 @@ export default
 
 .success
 	margin-top 10px
+	fluid-font 'bold', 14, 14, white
+	background green
+	border-radius 5px
+	padding spacing-s
 
 ul
 	border 1px solid ui-grey

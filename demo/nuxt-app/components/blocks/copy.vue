@@ -1,24 +1,28 @@
-<!-- Customer Registration -->
+<!-- Copy block -->
+
 <template lang='pug'>
 
-.cloak-customer
+section.copy.max-w-small(:class='classes')
 
-	cloak-customer-forms-register(can-login)
+	wysiwyg(
+		:html='block.body'
+		:balance-text='block.balanceText'
+		:unorphan='block.unorphan')
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-
 export default
 
-	middleware: 'unauthenticated'
+	props: block: Object
 
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
+	computed:
 
+		# Root classes
+		classes: ->
+			'text-' + @block.textAlignment.toLowerCase() if @block.textAlignment
 
 </script>
 
@@ -26,6 +30,16 @@ export default
 
 <style lang='stylus' scoped>
 
-@import '../styles/customer-shared.styl'
+// Center contents
+.text-center
+	text-align center
+	>>> .vv-visual
+		margin-h auto
+
+// Right align contents
+.text-right
+	text-align right
+	>>> .vv-visual
+		margin-left auto
 
 </style>

@@ -1,17 +1,15 @@
 <template lang='pug'>
 
-form.cloak-customer-form(@submit.prevent='onSubmit')
-
-	h2.style-h2 Reset your password
+form.cloak-customer-form(@submit.prevent='onSubmit' ref='form')
 
 	//- error messages if applicable
 	.errors(v-if='errors.length' role='alert')
 		div(v-for='error, index in errors' :key='index') {{ error }}
 
-	//- success message w/ prompt to login
+	//- success message with prompt to login
 	.success(v-if='success')
-		h3.style-h3 Successfully Reset Password
-		btn(to='/account/login') Login Now
+		h4.style-h4 Successfully Activated
+		btn: smart-link(to='/account') Login Now
 
 	div(v-else)
 
@@ -36,12 +34,12 @@ form.cloak-customer-form(@submit.prevent='onSubmit')
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-
 export default
 
+	middleware: 'unauthenticated'
 
 	data: ->
-		processing: false
+		loading: false
 		success: false
 		errors: []
 		form: password: ''
@@ -53,17 +51,18 @@ export default
 			id: @$makeShopifyId 'Customer', @$route.params.customerId
 			input:
 				password: @form.password
-				resetToken: @$route.params.token
+				activationToken: @$route.params.token
 
 	methods:
 
 		onSubmit: (e) ->
 			@processing = true
 			try
-				await @$store.dispatch 'customer/resetPassword', { @payload }
+				await @$store.dispatch 'customer/activateAccount', { @payload }
 				@success = true
 			catch e then @errors = e.messages || ['Unknown error']
 			finally @processing = false
+
 
 </script>
 
