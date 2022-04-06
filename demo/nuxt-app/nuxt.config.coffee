@@ -8,6 +8,12 @@ boilerplate = makeBoilerplate
 # Nuxt config
 module.exports = mergeConfig boilerplate,
 
+	env:
+		APP_ENV: process.env.APP_ENV || process.env.SENTRY_ENVIRONMENT || 'dev'
+		SHOPIFY_STOREFRONT_TOKEN: process.env.SHOPIFY_STOREFRONT_TOKEN
+		SHOPIFY_URL: process.env.SHOPIFY_URL
+		NUXT_APP_URL: process.env.URL
+
 
 	modules: [
 		'@nuxt/content'

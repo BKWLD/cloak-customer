@@ -6,13 +6,14 @@ header
 
 	// Expect to overlap a dark background
 	color white
+	background primary-color
 
 	// Show inverted state
 	transition-property background, color
 	transition-duration .6s // Feels better with longer delay
 	.show-background &
-		background offwhite
-		color black
+		background primary-color
+		color white
 
 // Setup columns
 .columns
