@@ -5,7 +5,7 @@ export default function() {
 	// Have Nuxt transpile resources
 	this.options.build.transpile.push('@cloak-app/customer')
 
-	// this.addServerMiddleware(join(__dirname, './middleware/client-only-pages.js'))
+	this.addServerMiddleware(join(__dirname, './middleware/client-only-pages.js'))
 
 	// Allow components to be auto-imported by Nuxt
 	this.nuxt.hook('components:dirs', dirs => {
@@ -29,6 +29,13 @@ export default function() {
 	// Register package page routes
   this.extendRoutes((routes, resolve) => {
 
+		// Support customer and token route segments an activate and reset. So they
+		// become like /account/reset/:customerId/:resetToken
+		routes.forEach((route) => {
+			if(route.path.match(/^\/account\/(activate|reset)/)) {
+				route.path = "#{match[0]}/:customerId/:token";
+			}
+		})
 
 		let customRoutes = [
 			{ name: 'customer-login', path: '/account/login', component: 'pages/login.vue' },
