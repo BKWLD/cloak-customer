@@ -14,6 +14,7 @@ import addressCreateQuery from '../../queries/address-create.gql'
 import addressUpdateQuery from '../../queries/address-update.gql'
 import addressDeleteQuery from '../../queries/address-delete.gql'
 import ordersQuery from '../../queries/orders.gql'
+import atob from 'atob-lite'
 import { execute, findEdgeNodes } from './storefront'
 
 # Standardize error handling
@@ -44,10 +45,10 @@ class CustomerMutationError extends Error
 		@messages = messages
 
 # Register a new customer
-export create = ({ email, password, firstName, lastName, tags }) ->
+export create = ({ email, password, firstName, lastName }) ->
 	executeCustomerMutation
 		query: createQuery
-		variables: input: { email, password, firstName, lastName, tags }
+		variables: input: { email, password, firstName, lastName }
 
 # Trigger a password reset
 export recoverPassword = ({ email }) ->

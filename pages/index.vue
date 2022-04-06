@@ -64,7 +64,6 @@ import vueCountryRegionSelect from 'vue-country-region-select'
 Vue.use(vueCountryRegionSelect)
 
 
-
 export default
 
 	components: {
@@ -81,6 +80,8 @@ export default
 		{ accessToken } = store.state.customer
 
 		await store.dispatch 'customer/fetchAddresses'
+
+		# TODO: this is proprietary, so maybe this should be moved to the project somehow?
 		await store.commit 'layout/setGlobalElementVisibility', false
 
 		orders = await customerApi.getOrders { accessToken }

@@ -8,6 +8,7 @@ fragment customer on Customer {
 	email
 	firstName
 	lastName
+	tags
 
 	# Default Address
 	defaultAddress { ...address }

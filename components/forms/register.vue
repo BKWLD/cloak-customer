@@ -68,6 +68,10 @@ export default
 			type: Boolean
 			default: false
 
+		postLoginRedirect:
+			type: String
+			default: '/account'
+
 	data: ->
 		processing: false
 		errors: []
@@ -87,7 +91,6 @@ export default
 			lastName = form.elements['lastName'].value
 			email = form.elements['email'].value
 			password = form.elements['password'].value
-			tags = ['pending']
 
 			if password.length < 5
 				@errors.push 'Password is too short, please make sure it\'s at least 5 characters'
@@ -95,8 +98,8 @@ export default
 
 			# Attempt to submit
 			try
-				await @$store.dispatch 'customer/create', { email, password, firstName, lastName, tags }
-				@$router.push '/account'
+				await @$store.dispatch 'customer/create', { email, password, firstName, lastName }
+				@$router.push @postLoginRedirect
 			catch e then @errors = e.messages || ['Unknown error']
 			finally @processing = false
 

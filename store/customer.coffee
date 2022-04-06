@@ -49,9 +49,13 @@ export mutations =
 export actions =
 
 	# Create a customer then log them in
-	create: ({ commit, dispatch }, { email, password, firstName, lastName, tags }) ->
-		await customerApi.create { email, password, firstName, lastName, tags }
+	create: ({ commit, dispatch }, { email, password, firstName, lastName }) ->
+		customer = await customerApi.create { email, password, firstName, lastName }
 		await dispatch 'login', { email, password }
+
+	# add a tag to the customer
+	addTag: ({}, { tag, id }) ->
+		await customerApi.addTag { tag, id }
 
 	# trigger a password reset email
 	recoverPassword: ({}, { email }) ->
