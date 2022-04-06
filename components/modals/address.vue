@@ -223,24 +223,7 @@ export default
 <style lang='stylus' scoped>
 
 // @import '../../styles/customer-shared.styl'
-// @import '../../styles/customer-modal.styl'
-
->>>
-	.bvm-contents
-		text-align left
-		padding spacing-m
-
-	.bvm-slot
-		border-radius 10px
-
-	.bvm-close
-		top 10px
-		right 20px
-
-		:after
-			font-size 30px
-			content "\00d7"
-			color primary-color
+@import '../../styles/customer-modal.styl'
 
 .dropdown-container
 	position relative

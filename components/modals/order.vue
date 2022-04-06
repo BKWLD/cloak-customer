@@ -1,51 +1,50 @@
 <template lang='pug'>
 
-modal(:closeable='true' type='standard' v-on:close='closed')
-	.customer-modal
+modal.customer-modal(:closeable='true' type='standard' v-on:close='closed')
 
-		.headline
-			h3.style-h3 Order {{ order.name }}
-			.order-date
-				span Order placed on
-				span {{ order.processedAt | date }}
+	.headline
+		h3.style-h3 Order {{ order.name }}
+		.order-date
+			span Order placed on
+			span {{ order.processedAt | date }}
+
+	hr
+
+	div.warning(v-if='order.canceledAt') Cancelled on {{ order.canceledAt | date }}
+
+	//- Order Status
+	.half
+		h4.style-h4 Fulfillment
+		.pill.default {{ order.financialStatus }}
+
+	//- Order Fulfillment
+	.half
+		h4.style-h4 Status
+		.pill(:class='order.fulfillmentStatus | lowercase ') {{ order.fulfillmentStatus }}
+
+	hr
+
+	div(v-if='hasTracking')
+
+		h4.style-h4 TRACKING
+		.company {{ order.tracking[0].company }}
+		.number(v-if='order.tracking[0].info[0]')
+			a.pill.tracking(:href='order.tracking[0].info[0].url' target='blank') {{ order.tracking[0].info[0].number }}
 
 		hr
 
-		div.warning(v-if='order.canceledAt') Cancelled on {{ order.canceledAt | date }}
+	//- line items
+	h4.style-h4 Items In Order
 
-		//- Order Status
-		.half
-			h4.style-h4 Fulfillment
-			.pill.default {{ order.financialStatus }}
+	.line-items
+		line-item-card(v-for='item, index in order.lineItems'
+			:key='index' :item='item')
 
-		//- Order Fulfillment
-		.half
-			h4.style-h4 Status
-			.pill(:class='order.fulfillmentStatus | lowercase ') {{ order.fulfillmentStatus }}
-
-		hr
-
-		div(v-if='hasTracking')
-
-			h4.style-h4 TRACKING
-			.company {{ order.tracking[0].company }}
-			.number(v-if='order.tracking[0].info[0]')
-				a.pill.tracking(:href='order.tracking[0].info[0].url' target='blank') {{ order.tracking[0].info[0].number }}
-
-			hr
-
-		//- line items
-		h4.style-h4 Items In Order
-
-		.line-items
-			line-item-card(v-for='item, index in order.lineItems'
-				:key='index' :item='item')
-
-		.totals
-			.total-line Subtotal: {{ subtotal }}
-			.total-line Tax: {{ tax }}
-			.total-line Shipping: {{ shipping }}
-			.total-line.total Total: {{ total }}
+	.totals
+		.total-line Subtotal: {{ subtotal }}
+		.total-line Tax: {{ tax }}
+		.total-line Shipping: {{ shipping }}
+		.total-line.total Total: {{ total }}
 
 
 </template>
@@ -111,15 +110,6 @@ export default
 .company
 	margin-top 5px
 	fluid-font 'bold', 16, 14
-
->>> .bvm-close
-	:after
-		font-size 30px
-		content "\00d7"
-		color primary-color
-
->>> .bvm-slot
-	border-radius 10px
 
 
 </style>
