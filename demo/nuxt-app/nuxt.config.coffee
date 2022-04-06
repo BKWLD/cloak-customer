@@ -58,6 +58,18 @@ module.exports = mergeConfig boilerplate,
 	# Expect specially slug-ed towers to exist that will be loaded by error.vue
 	generate: fallback: true
 
+	# Customize the routes
+	router: extendRoutes: (routes) ->
+
+		# Support customer and token route segments an activate and reset. So they
+		# become like /account/reset/:customerId/:resetToken
+		for route in routes
+			if match = route.path.match /^\/account\/(activate|reset)/
+			then route.path = "#{match[0]}/:customerId/:token"
+
+	# Disable SSR on account pages
+	serverMiddleware: [ '~/middleware/client-only-pages' ]
+
 	# Add production internal URL
 	anchorParser: internalUrls: [
 		# /^https?:\/\/(www\.)?domain\.com/
