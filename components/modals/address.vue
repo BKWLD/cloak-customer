@@ -12,7 +12,7 @@ modal.cloak-address-modal.customer-modal(
 		.errors(v-if='errors.length' role='alert')
 			div(v-for='error, index in errors' :key='index') {{ error }}
 
-		form.customer-form(@submit.prevent='processAddress')
+		form.cloak-customer-form.in-modal(@submit.prevent='processAddress')
 
 			.half-wrap
 				label(for='firstName')
@@ -101,7 +101,8 @@ modal.cloak-address-modal.customer-modal(
 						maxlength='20')
 
 			.bottom-actions
-				button(type='submit') {{ btnText }}
+				btn
+					button(type='submit') {{ btnText }}
 
 
 </template>
@@ -222,7 +223,8 @@ export default
 
 <style lang='stylus' scoped>
 
-// @import '../../styles/customer-shared.styl'
+@import '../../styles/customer-form.styl'
+@import '../../styles/customer-shared.styl'
 @import '../../styles/customer-modal.styl'
 
 .dropdown-container
