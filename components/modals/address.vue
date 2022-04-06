@@ -222,8 +222,8 @@ export default
 
 <style lang='stylus' scoped>
 
-@import '../../styles/customer-shared.styl'
-@import '../../styles/customer-modal.styl'
+// @import '../../styles/customer-shared.styl'
+// @import '../../styles/customer-modal.styl'
 
 >>>
 	.bvm-contents
@@ -234,9 +234,13 @@ export default
 		border-radius 10px
 
 	.bvm-close
-		color primary-color
-		top 20px
+		top 10px
 		right 20px
+
+		:after
+			font-size 30px
+			content "\00d7"
+			color primary-color
 
 .dropdown-container
 	position relative

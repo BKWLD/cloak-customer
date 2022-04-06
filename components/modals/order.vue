@@ -113,9 +113,10 @@ export default
 	fluid-font 'bold', 16, 14
 
 >>> .bvm-close
-	color black !important
-	top 15px
-	right 15px
+	:after
+		font-size 30px
+		content "\00d7"
+		color primary-color
 
 >>> .bvm-slot
 	border-radius 10px
