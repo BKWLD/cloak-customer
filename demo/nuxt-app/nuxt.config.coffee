@@ -21,6 +21,10 @@ module.exports = mergeConfig boilerplate,
 		'vue-balance-text/nuxt/module'
 	]
 
+	plugins: [
+		{ src: 'plugins/country-region-select' }
+	]
+
 	buildModules: [
 		'@cloak-app/customer/nuxt'
 	]

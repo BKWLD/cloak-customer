@@ -108,13 +108,11 @@ modal.cloak-address-modal.customer-modal(
 </template>
 
 <script lang='coffee'>
+
 import Modal from '@bkwld/vue-modal'
 import '@bkwld/vue-modal/index.css'
 import AccessibilityBtn from '../accessibility-btn'
 
-import Vue from 'vue'
-import vueCountryRegionSelect from 'vue-country-region-select'
-Vue.use(vueCountryRegionSelect)
 
 import { clearAllBodyScrollLocks } from 'body-scroll-lock'
 
