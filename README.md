@@ -2,10 +2,6 @@
 
 Cloak components for rendering Customer components.  [View demo](https://cloak-customer.netlify.app/).
 
-```vue
-
-```
-
 ## Install
 
 1. Install with `yarn add @cloak-app/customer`
@@ -25,6 +21,12 @@ import Vue from 'vue'
 import vueCountryRegionSelect from 'vue-country-region-select'
 Vue.use(vueCountryRegionSelect)
 ```
+
+### Options
+
+- `cloak.customer:`
+  - `authenticatedRoute` - The route to redirect users who aren't authenticated. Defaults to `/account`
+  - `unauthenticatedRoute` - The route to redirect users who aren't authenticated. Defaults to `/account/login`
 
 ### Project Dependencies
 

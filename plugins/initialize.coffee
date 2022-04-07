@@ -1,7 +1,7 @@
 # Load use package path because relative paths require the nuxt module
 # to register them with addPlugin
 import * as customerStore from '@cloak-app/customer/store/customer'
-export default ({ store, redirect }, inject) ->
+export default ({ store, redirect, $config }, inject) ->
 
 	# Register the vuex module
 	store.registerModule 'customer', {
@@ -28,11 +28,11 @@ export default ({ store, redirect }, inject) ->
 	inject 'unauthenticated', ->
 		await whenCustomerHydrated()
 		if store.getters['customer/isAuthenticated']
-		then redirect '/account'
+		then redirect $config.cloak.customer.authenticatedRoute
 
 	# Middleware helper forpages that require an authenticated user, like on the
 	# main account page
 	inject 'authenticated', ->
 		await whenCustomerHydrated()
 		unless store.getters['customer/isAuthenticated']
-		then redirect '/account/login'
+		then redirect $config.cloak.customer.unauthenticatedRoute

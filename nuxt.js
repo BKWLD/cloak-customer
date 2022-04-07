@@ -1,5 +1,6 @@
 import { join } from 'path'
 import { sortRoutes } from '@nuxt/utils'
+import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
 	// Have Nuxt transpile resources
@@ -20,6 +21,17 @@ export default function() {
 			level: 2,
 		})
 
+	})
+
+	// Set default options
+	defaultsDeep(this.options, { cloak: { customer: {
+		authenticatedRoute: '/account',
+		unauthenticatedRoute: '/account/login'
+	}}})
+
+	// Relay package options to runtime config
+	defaultsDeep(this.options.publicRuntimeConfig, {
+		cloak: { customer: this.options.cloak.customer }
 	})
 
 	this.addPlugin({
