@@ -940,12 +940,13 @@
     bukwild-stylus-library "^3.1.0"
     webpack-node-externals "^3.0.0"
 
-"@cloak-app/boilerplate@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@cloak-app/boilerplate/-/boilerplate-1.0.4.tgz#b539c554c7a82c76efa1b177b5f1efe1c027e0e7"
-  integrity sha512-CRR2YPnHOwSgzVEx7eD2RIs++Pz28AvFwEYE2fNogpTVwup3y/yMdUJemtivdNaxVJY27ZW738jnf4wggGcgDA==
+"@cloak-app/boilerplate@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@cloak-app/boilerplate/-/boilerplate-1.0.8.tgz#b954a9f87281573da27084e82f1e0f9fa3b9bb91"
+  integrity sha512-IMpJTot63ir0dnWGTrYtckrJRjUwMF4X1VIT42DTdue3KTTVFUDaxUQAVTUkhcHS6A9/jYOJEzhJEZI+z2IHtg==
   dependencies:
     "@bkwld/credits" "^0.3.0"
+    "@cloak-app/utils" "^1.0.1"
     "@nuxt/utils" "^2.15.0"
     "@nuxtjs/axios" "^5.0.0"
     "@nuxtjs/gtm" "^2.0.0"
@@ -971,10 +972,10 @@
     vue-routing-anchor-parser "^1.13.1"
     webpack-graphql-loader gpoitch/graphql-loader#gp/refresh
 
-"@cloak-app/demo-theme@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@cloak-app/demo-theme/-/demo-theme-1.0.4.tgz#4fe13e3a0939cac4a29f0f994633022e52fcdd46"
-  integrity sha512-gXBjr7hVfdcV+SNm/lS7lAYogkIgRb4bGpOdMqPxxe+MzzGoyEa368Q4hRMqNPe0xZERqk9PWRucSxoaEhtdgA==
+"@cloak-app/demo-theme@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@cloak-app/demo-theme/-/demo-theme-1.0.5.tgz#9ac283e0a383025284afed66b9b21526d4294a01"
+  integrity sha512-oq5noLz5r6wmMJtng8VbM1jLzI2kJZNvpen4K7feP6v01W0d5LzTiRMVauWHoghq6o8wFwDcgc5g46Mu01oq7Q==
   dependencies:
     prism-themes "^1.9.0"
 
