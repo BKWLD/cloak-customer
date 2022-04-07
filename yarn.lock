@@ -940,10 +940,10 @@
     bukwild-stylus-library "^3.1.0"
     webpack-node-externals "^3.0.0"
 
-"@cloak-app/boilerplate@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@cloak-app/boilerplate/-/boilerplate-1.0.8.tgz#b954a9f87281573da27084e82f1e0f9fa3b9bb91"
-  integrity sha512-IMpJTot63ir0dnWGTrYtckrJRjUwMF4X1VIT42DTdue3KTTVFUDaxUQAVTUkhcHS6A9/jYOJEzhJEZI+z2IHtg==
+"@cloak-app/boilerplate@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@cloak-app/boilerplate/-/boilerplate-1.0.9.tgz#bda031cc152f5d7bccf0e928349164129b65de52"
+  integrity sha512-XMKxJ3KzZyrWPORdC7/HcsPus3fSSwLUVN+vB6WyZzL8Ft9hu1UDxkI0waDTP/VzJBRIu3ZQdaP60s5tTKNH/Q==
   dependencies:
     "@bkwld/credits" "^0.3.0"
     "@cloak-app/utils" "^1.0.1"

@@ -103,8 +103,10 @@ export default function() {
 	this.options.styleResources.stylus
 		.push(join(__dirname, 'styles/definitions.styl'))
 
-	// Add style-resources module
-	requireOnce(this, '@nuxtjs/style-resources')
+	// Add style-resources module late so other modules can append imports
+	this.nuxt.hook('modules:done', moduleContainer => {
+		requireOnce(moduleContainer, '@nuxtjs/style-resources')
+	})
 }
 
 // Required for published modules
