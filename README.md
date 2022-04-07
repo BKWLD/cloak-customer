@@ -18,14 +18,6 @@ Cloak components for rendering Customer components.  [View demo](https://cloak-c
 - write_customers
 - read_customers
 6. Make sure accounts are at least set to optional on the shop (/admin/settings/checkout)
-7. Add country-region-select to plugins in the project
-- Create a `nuxt-app/plugins` folder
-- add `vue-country-region-select.coffee` with the following: 
-```
-import Vue from 'vue'
-import vueCountryRegionSelect from 'vue-country-region-select'
-Vue.use(vueCountryRegionSelect)
-```
 
 ### Project Dependencies
 
