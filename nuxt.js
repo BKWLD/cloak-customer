@@ -1,5 +1,6 @@
 import { join } from 'path'
 import { sortRoutes } from '@nuxt/utils'
+import { requireOnce } from '@cloak-app/utils'
 import defaultsDeep from 'lodash/defaultsDeep'
 export default function() {
 
@@ -96,6 +97,14 @@ export default function() {
 		// Apply Nuxt sorting of routes
 		sortRoutes(routes)
 	})
+
+	// Configure style-resources module to append package definitions
+	defaultsDeep(this.options, { styleResources: { stylus: [] }})
+	this.options.styleResources.stylus
+		.push(join(__dirname, 'styles/definitions.styl'))
+
+	// Add style-resources module
+	requireOnce(this, '@nuxtjs/style-resources')
 }
 
 // Required for published modules
