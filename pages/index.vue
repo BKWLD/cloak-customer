@@ -55,17 +55,7 @@
 import AddressModal from '../components/modals/address'
 import * as customerApi from '../services/shopify/customer'
 import { mountComponent } from '../helpers/helpers'
-
-import Vue from 'vue'
-import vueCountryRegionSelect from 'vue-country-region-select'
-Vue.use(vueCountryRegionSelect)
-
-
 export default
-
-	components: {
-		AddressModal
-	}
 
 	middleware: 'authenticated'
 
