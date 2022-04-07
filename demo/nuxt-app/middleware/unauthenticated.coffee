@@ -3,13 +3,14 @@ Require NO-authentication
 ###
 export default ({ app, store, redirect }) ->
 
-	console.log 'in unauthenticated'
-
 	# Wait for customer to be hydrated
-	# await new Promise (resolve) ->
-	# 	unwatch = store.watch ((state) -> state.customer.hydrated)
-	# 	, ((hydrated) -> unwatch() && resolve() if hydrated)
-	# 	, immediate: true
+	unless store.state.customer.hydrated
+	then await new Promise (resolve) ->
+		unwatch = store.watch(
+			(state) -> state.customer.hydrated
+			(hydrated) -> if hydrated then unwatch() && resolve()
+		)
 
-	# if store.getters['customer/isAuthenticated']
-	# then redirect '/account'
+	# If logged in, redirect to account page
+	if store.getters['customer/isAuthenticated']
+	then redirect '/account'
