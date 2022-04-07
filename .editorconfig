@@ -11,6 +11,12 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
+indent_style = space
 
-[README.md]
+[*.php]
+indent_style = space
+indent_size = 4
+
+# Most systems that consume yml expect spaces
+[*.yml]
 indent_style = space

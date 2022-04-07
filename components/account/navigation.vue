@@ -60,7 +60,7 @@ export default
 	line-height 1.2
 	word-wrap break-word
 
-+on-desktop()
++tablet-up()
 	.customer-navigation
 		width 250px
 		padding spacing-xs
@@ -85,7 +85,7 @@ export default
 			&:not(:first-child)
 				border-top 1px solid ui-grey
 
-+on-mobile()
++tablet-down()
 	.customer-information
 		margin-v spacing-s
 

@@ -6,6 +6,14 @@ export default function() {
 	// Have Nuxt transpile resources
 	this.options.build.transpile.push('@cloak-app/customer')
 
+	// Expose .env config
+	defaultsDeep(this.options.env, {
+		APP_ENV: process.env.APP_ENV,
+		SHOPIFY_URL: process.env.SHOPIFY_URL,
+		SHOPIFY_STOREFRONT_TOKEN: process.env.SHOPIFY_STOREFRONT_TOKEN,
+	})
+
+	// Don't SSR account pages
 	this.addServerMiddleware(join(__dirname, './middleware/client-only-pages.js'))
 
 	// Allow components to be auto-imported by Nuxt
@@ -36,6 +44,9 @@ export default function() {
 
 	this.addPlugin({
 		src: join(__dirname, './plugins/initialize.coffee'),
+		options: {
+			storeDir: join(__dirname, 'store'),
+		}
 	});
 
 	// Register package page routes

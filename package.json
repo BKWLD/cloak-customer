@@ -5,6 +5,12 @@
 	"repository": "git@github.com:BKWLD/cloak-copy.git",
 	"author": "Bukwild <info@bukwild.com>",
 	"license": "MIT",
+	"scripts": {
+		"dev": "nuxt dev demo",
+		"build": "nuxt build demo",
+		"start": "nuxt start demo",
+		"generate": "nuxt generate demo --fail-on-error --target=static"
+	},
 	"dependencies": {
 		"@bkwld/vue-modal": "BKWLD/vue-modal#9dc40c6",
 		"@nuxt/utils": "^2.15.8",
@@ -12,5 +18,11 @@
 		"js-cookie": "^2.2.1",
 		"lodash": "^4.0.0",
 		"vue-country-region-select": "^2.0.16"
+	},
+	"devDependencies": {
+		"@cloak-app/boilerplate": "^1.0.4",
+		"@cloak-app/demo-theme": "^1.0.4",
+		"@nuxt/content": "^1.14.0",
+		"nuxt": "^2.14.0"
 	}
 }
