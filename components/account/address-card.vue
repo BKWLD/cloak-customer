@@ -112,7 +112,7 @@ export default
 	padding-v 5px
 	padding-h spacing-xxs
 	background ui-grey
-	border-radius radius
+	border-radius cloak-customer-radius
 	fluid-font 'bold', 16, 14
 
 </style>

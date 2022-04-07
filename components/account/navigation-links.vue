@@ -77,7 +77,7 @@ export default
 ul
 	border 1px solid ui-grey
 	margin-top spacing-s
-	border-radius radius
+	border-radius cloak-customer-radius
 
 	li
 		&:not(:first-child)
