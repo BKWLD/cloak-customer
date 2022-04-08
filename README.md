@@ -2,30 +2,31 @@
 
 Cloak components for rendering Customer components.  [View demo](https://cloak-customer.netlify.app/).
 
-```vue
-
-```
-
 ## Install
 
 1. Install with `yarn add @cloak-app/customer`
 2. Add to `nuxt.config` with `buildModules: ['@cloak-app/customer/nuxt']`
-3. Copy 'authenticated' and 'unauthenticated' from middlewares the middlewares folder of the project
-4. Make sure components is set to true in the project's nuxt.config so the components can be auto-loaded
-5. Set Shopify admin api permissions
+3. Make sure components is set to true in the project's nuxt.config so the components can be auto-loaded
+4. Set Shopify admin api permissions
 - create a private 'develop' app
 - allow admin api access & allow permission to
 - write_customers
 - read_customers
-6. Make sure accounts are at least set to optional on the shop (/admin/settings/checkout)
-7. Add country-region-select to plugins in the project
+5. Make sure accounts are at least set to optional on the shop (/admin/settings/checkout)
+6. Add country-region-select to plugins in the project
 - Create a `nuxt-app/plugins` folder
-- add `vue-country-region-select.coffee` with the following: 
+- add `vue-country-region-select.coffee` with the following:
 ```
 import Vue from 'vue'
 import vueCountryRegionSelect from 'vue-country-region-select'
 Vue.use(vueCountryRegionSelect)
 ```
+
+### Options
+
+- `cloak.customer:`
+  - `authenticatedRoute` - The route to redirect users who aren't authenticated. Defaults to `/account`
+  - `unauthenticatedRoute` - The route to redirect users who aren't authenticated. Defaults to `/account/login`
 
 ### Project Dependencies
 

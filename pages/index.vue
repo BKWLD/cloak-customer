@@ -67,7 +67,7 @@ export default
 		AddressModal
 	}
 
-	middleware: 'authenticated'
+	middleware: ({ app }) -> await app.$authenticated()
 
 	# Fetch orders and addresses from Shopify
 	asyncData: ({ app, store }) ->

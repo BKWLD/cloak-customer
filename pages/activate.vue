@@ -11,7 +11,7 @@
 
 export default
 
-	middleware: 'unauthenticated'
+	middleware: ({ app }) -> await app.$unauthenticated()
 
 
 </script>

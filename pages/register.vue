@@ -13,7 +13,7 @@
 
 export default
 
-	middleware: 'unauthenticated'
+	middleware: ({ app }) -> await app.$unauthenticated()
 
 	mounted: ->
 		if @$store.state.customer.email
