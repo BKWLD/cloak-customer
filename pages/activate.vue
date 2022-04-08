@@ -13,6 +13,7 @@ export default
 
 	middleware: ({ app }) -> await app.$unauthenticated()
 
+	layout: ({ $config }) -> $config.cloak.customer.layout
 
 </script>
 

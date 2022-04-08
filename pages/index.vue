@@ -63,6 +63,8 @@ export default
 
 	middleware: ({ app }) -> await app.$authenticated()
 
+	layout: ({ $config }) -> $config.cloak.customer.layout
+
 	# Fetch orders and addresses from Shopify
 	asyncData: ({ app, store }) ->
 		{ accessToken } = store.state.customer

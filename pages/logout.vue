@@ -6,6 +6,8 @@ export default
 
 	middleware: ({ app }) -> await app.$authenticated()
 
+	layout: ({ $config }) -> $config.cloak.customer.layout
+
 	# Execute code on mount, once old page has been destroyed
 	mounted: ->
 		await @$store.dispatch 'customer/logout'

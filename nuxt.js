@@ -32,6 +32,7 @@ export default function() {
 	setPublicDefaultOptions(this, 'customer', {
 		authenticatedRoute: '/account',
 		unauthenticatedRoute: '/account/login'
+		layout: 'default',
 	})
 
 	// Add the plugin that boots up all the runtime code

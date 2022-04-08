@@ -22,6 +22,7 @@ Cloak components for rendering Customer components.
 - `cloak.customer:`
   - `authenticatedRoute` - The route to redirect users who aren't authenticated. Defaults to `/account`
   - `unauthenticatedRoute` - The route to redirect users who aren't authenticated. Defaults to `/account/login`
+  - `layout` - The Nuxt layout to use within the customer pages. Defaults to `default`.
 
 ## Expected project components
 - `<btn>`

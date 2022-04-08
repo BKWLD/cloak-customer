@@ -19,6 +19,7 @@ export default
 		if @$store.state.customer.email
 			@$router.push '/account'
 
+	layout: ({ $config }) -> $config.cloak.customer.layout
 
 </script>
 

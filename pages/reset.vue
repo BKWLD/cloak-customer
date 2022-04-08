@@ -9,8 +9,9 @@
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
+export default
 
-# export default
+	layout: ({ $config }) -> $config.cloak.customer.layout
 
 </script>
 
