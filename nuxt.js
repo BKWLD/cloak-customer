@@ -34,11 +34,8 @@ export default function() {
 	})
 
 	// Add the plugin that boots up all the runtime code
-	this.addPlugin({
+	this.options.plugins.push({
 		src: join(__dirname, './plugins/initialize.coffee'),
-		options: {
-			packageDir: __dirname,
-		}
 	});
 
 	// Register package page routes
