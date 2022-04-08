@@ -15,10 +15,6 @@ export default
 
 	middleware: ({ app }) -> await app.$unauthenticated()
 
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
-
 	layout: ({ $config }) -> $config.cloak.customer.layout
 
 </script>

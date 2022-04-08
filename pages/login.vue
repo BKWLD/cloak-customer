@@ -21,10 +21,6 @@ export default
 	data: ->
 		recover: false
 
-	mounted: ->
-		if @$store.state.customer?.email
-			@$router.push '/account'
-
 	methods:
 		toggleForm: -> @recover = !@recover
 
