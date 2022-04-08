@@ -4,7 +4,7 @@
 <script lang='coffee'>
 export default
 
-	middleware: 'authenticated'
+	middleware: ({ app }) -> await app.$authenticated()
 
 	# Execute code on mount, once old page has been destroyed
 	mounted: ->

@@ -36,7 +36,7 @@ form.cloak-customer-form(@submit.prevent='onSubmit' ref='form')
 <script lang='coffee'>
 export default
 
-	middleware: 'unauthenticated'
+	middleware: ({ app }) -> await app.$unauthenticated()
 
 	data: ->
 		loading: false

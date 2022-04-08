@@ -1,31 +1,25 @@
-<!-- Customer Registration -->
+<!-- Demo homepage -->
+
 <template lang='pug'>
 
-.cloak-customer
-
-	cloak-customer-forms-register(can-login)
+nuxt-content(:document='page')
 
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-
 export default
 
-	middleware: ({ app }) -> await app.$unauthenticated()
-
-	mounted: ->
-		if @$store.state.customer.email
-			@$router.push '/account'
-
+	# Get page content
+	asyncData: ({ app, params, $content }) ->
+		page = await $content('demo').fetch()
+		return { page }
 
 </script>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <style lang='stylus' scoped>
-
-@import '../styles/customer-shared.styl'
 
 </style>

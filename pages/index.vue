@@ -57,7 +57,11 @@ import * as customerApi from '../services/shopify/customer'
 import { mountComponent } from '../helpers/helpers'
 export default
 
-	middleware: 'authenticated'
+	components: {
+		AddressModal
+	}
+
+	middleware: ({ app }) -> await app.$authenticated()
 
 	# Fetch orders and addresses from Shopify
 	asyncData: ({ app, store }) ->

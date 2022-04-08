@@ -1,37 +1,38 @@
 # @cloak-app/customer
 
-Cloak components for rendering Customer components.  [View demo](https://cloak-customer.netlify.app/).
+Cloak components for rendering Customer components.
 
-```vue
-
-```
+- [View demo](https://cloak-customer.netlify.app)
+- [Edit CodeSandbox](https://githubbox.com/BKWLD/cloak-customer)
 
 ## Install
 
 1. Install with `yarn add @cloak-app/customer`
 2. Add to `nuxt.config` with `buildModules: ['@cloak-app/customer/nuxt']`
-3. Copy 'authenticated' and 'unauthenticated' from middlewares the middlewares folder of the project
-4. Make sure components is set to true in the project's nuxt.config so the components can be auto-loaded
-5. Set Shopify admin api permissions
-- create a private 'develop' app
-- allow admin api access & allow permission to
-- write_customers
-- read_customers
-6. Make sure accounts are at least set to optional on the shop (/admin/settings/checkout)
+3. Make sure components is set to true in the project's nuxt.config so the components can be auto-loaded
+4. Set Shopify admin api permissions
+  - create a private 'develop' app
+  - allow admin api access & allow permission to
+  - write_customers
+  - read_customers
+5. Make sure accounts are at least set to optional on the shop (/admin/settings/checkout)
 
-### Project Dependencies
+### Options
 
-- `@nuxt/utils`
-- `@bkwld/vue-modal` #9dc40c6
-- `vue-country-region-select`
+- `cloak.customer:`
+  - `authenticatedRoute` - The route to redirect users who aren't authenticated. Defaults to `/account`
+  - `unauthenticatedRoute` - The route to redirect users who aren't authenticated. Defaults to `/account/login`
 
+## Expected project components
+- `<btn>`
 
-### Expected styles
+### Expected Styus vars
+- radius
 - spacing (xs - xxl)
 - ui-grey
 - primary-color
 - ui-error
-- on-desktop() and on-mobile() breakpoint helpers
+- tablet-up() and tablet-down() breakpoint helpers
 
 ### Expected ENV vars
 - SHOPIFY_URL
