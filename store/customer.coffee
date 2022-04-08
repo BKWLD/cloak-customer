@@ -11,7 +11,9 @@ export state = ->
 	firstName: null
 	lastName: null
 	defaultAddress: null
-	tags: null
+	tags: []
+	addresses: []
+	orders: []
 
 	# Shopify auth data
 	accessToken: null
@@ -20,8 +22,6 @@ export state = ->
 	# Have we determined whether they are authenticated or not? This can be true
 	# but still have no accessToken.
 	hydrated: false
-
-	addresses: []
 
 export getters =
 
