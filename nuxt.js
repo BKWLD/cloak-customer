@@ -2,6 +2,7 @@ import { join } from 'path'
 import { sortRoutes } from '@nuxt/utils'
 import { requireOnce } from '@cloak-app/utils'
 import defaultsDeep from 'lodash/defaultsDeep'
+import { setPublicDefaultOptions } from '@cloak-app/utils'
 export default function() {
 
 	// Have Nuxt transpile resources
@@ -28,22 +29,14 @@ export default function() {
 	})
 
 	// Set default options
-	defaultsDeep(this.options, { cloak: { customer: {
+	setPublicDefaultOptions(this, 'customer', {
 		authenticatedRoute: '/account',
 		unauthenticatedRoute: '/account/login'
-	}}})
-
-	// Relay package options to runtime config
-	defaultsDeep(this.options.publicRuntimeConfig, {
-		cloak: { customer: this.options.cloak.customer }
 	})
 
 	// Add the plugin that boots up all the runtime code
-	this.addPlugin({
+	this.options.plugins.push({
 		src: join(__dirname, './plugins/initialize.coffee'),
-		options: {
-			packageDir: __dirname,
-		}
 	});
 
 	// Register package page routes

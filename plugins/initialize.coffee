@@ -1,7 +1,7 @@
 # Load use package path because relative paths require the nuxt module
 # to register them with addPlugin
-import * as helpers from '<%= options.packageDir %>/helpers/helpers'
-import * as customerStore from '<%= options.packageDir %>/store/customer'
+import * as helpers from '../helpers/helpers'
+import * as customerStore from '../store/customer'
 export default ({ store, redirect, $config }, inject) ->
 
 	# Register the vuex module

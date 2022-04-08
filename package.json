@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@bkwld/vue-modal": "BKWLD/vue-modal#9dc40c6",
-		"@cloak-app/utils": "^1.0.1",
+		"@cloak-app/utils": "^1.2.0",
 		"@nuxt/utils": "^2.0.0",
 		"@nuxtjs/style-resources": "^1.0.0",
 		"atob-lite": "^2.0.0",
