@@ -28,7 +28,7 @@ export default function() {
 	})
 
 	// Set default options
-	setPublicDefaultOptions(this.options, 'customer', {
+	setPublicDefaultOptions(this, 'customer', {
 		authenticatedRoute: '/account',
 		unauthenticatedRoute: '/account/login'
 	})
