@@ -64,7 +64,7 @@ export default
 	.customer-navigation
 		width 250px
 		padding spacing-xs
-		border-radius radius
+		border-radius cloak-customer-radius
 
 	.name
 		display block
@@ -79,7 +79,7 @@ export default
 	ul
 		border 1px solid ui-grey
 		margin-top spacing-xs
-		border-radius radius
+		border-radius cloak-customer-radius
 
 		li
 			&:not(:first-child)
