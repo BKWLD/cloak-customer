@@ -108,18 +108,19 @@ modal.cloak-address-modal.customer-modal(
 </template>
 
 <script lang='coffee'>
-
 import Modal from '@bkwld/vue-modal'
 import '@bkwld/vue-modal/index.css'
 import AccessibilityBtn from '../accessibility-btn'
-
-
+import { CountrySelect, RegionSelect } from 'vue-country-region-select'
 import { clearAllBodyScrollLocks } from 'body-scroll-lock'
-
-
 export default
 
-	components: { AccessibilityBtn, Modal }
+	components: {
+		AccessibilityBtn
+		Modal
+		CountrySelect
+		RegionSelect
+	}
 
 	props:
 		address: Object
