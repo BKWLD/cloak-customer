@@ -86,7 +86,14 @@ export cookie = new class SharedCookie
 
 
 export formatPhone = (phoneNumberString) ->
-  cleaned = ('' + phoneNumberString).replace(/\D/g, '')
-  match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
-  if match
-    return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+	cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+	match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+	if match
+		return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+
+# Get the id from a Shoify gid:// style id.  This strips everything but the
+# last part of the string.  So
+# gid://shopify/MailingAddress/34641879105581?accessToken=....
+# becomes 34641879105581
+export getShopifyId = (base64id) ->
+	atob(base64id).match(/^gid:\/\/shopify\/\w+\/(\w+)/)?[1]
