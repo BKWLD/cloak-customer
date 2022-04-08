@@ -31,13 +31,14 @@ export default function() {
 	// Set default options
 	setPublicDefaultOptions(this, 'customer', {
 		authenticatedRoute: '/account',
-		unauthenticatedRoute: '/account/login'
+		unauthenticatedRoute: '/account/login',
 		layout: 'default',
 	})
 
 	// Add the plugin that boots up all the runtime code
 	this.options.plugins.push({
 		src: join(__dirname, './plugins/initialize.coffee'),
+		mode: 'client',
 	});
 
 	// Register package page routes
