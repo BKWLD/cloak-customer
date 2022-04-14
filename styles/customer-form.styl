@@ -3,7 +3,8 @@
 	&:not(.in-modal)
 		margin-h auto
 		border 1px solid ui-grey
-		border-radius 'calc(%s * 2)' % cloak-customer-radius
+		// border-radius 'calc(%s * 2)' % cloak-customer-radius
+		border-radius cloak-customer-radius
 		fluid padding, spacing-l, spacing-m
 		background white
 		box-shadow 0 0 50px rgba(#ccc, .2)
