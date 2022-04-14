@@ -11,7 +11,9 @@ export default
 	# Execute code on mount, once old page has been destroyed
 	mounted: ->
 		await @$store.dispatch 'customer/logout'
-		@$router.push '/'
+
+		# TODO: Better way to do this?
+		window.location.reload()
 
 	# Render an empty page
 	render: (create) ->
