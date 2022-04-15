@@ -79,6 +79,16 @@ export default function() {
 				path: '/account/reset',
 				component: 'pages/reset.vue'
 			},
+			{
+				name: 'customer-reset',
+				path: '/account/reset/:customerId/:token',
+				component: 'pages/reset.vue'
+			},
+			{
+				name: 'customer-activate',
+				path: '/account/activate/:customerId/:token',
+				component: 'pages/activate.vue'
+			}
 		]
 
 		// Hand over page routes to Nuxt
