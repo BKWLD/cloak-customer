@@ -27,7 +27,9 @@ form.cloak-customer-form(@submit.prevent='onSubmit' v-else)
 			autocomplete)
 
 	.form-actions
-		btn(:loading='processing' type='submit') Send Reset Link
+		btn(:loading='processing' type='submit') \
+			span Send Reset Link
+			span.icon-cog(v-if='processing')
 
 		ul
 			li

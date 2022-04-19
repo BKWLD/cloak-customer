@@ -23,7 +23,9 @@ form.cloak-customer-form(@submit.prevent='onSubmit' ref='form')
 				v-model='form.password')
 
 		.form-actions
-			btn(:loading='processing' type='submit') Set New Password
+			btn(:loading='processing' type='submit')
+				span Set New Password
+				span.icon-cog(v-if='processing')
 
 			ul
 				li

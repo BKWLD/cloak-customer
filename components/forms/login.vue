@@ -30,7 +30,9 @@ form.cloak-customer-form(@submit.prevent='onSumbit' ref='form')
 
 	.form-actions
 
-		btn(:loading='processing' type='submit') Login
+		btn(:loading='processing' type='submit')
+			span Login
+			span.icon-cog(v-if='processing')
 
 		ul
 			li(v-if='canRegister')

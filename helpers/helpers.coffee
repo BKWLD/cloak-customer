@@ -97,3 +97,7 @@ export formatPhone = (phoneNumberString) ->
 # becomes 34641879105581
 export getShopifyId = (base64id) ->
 	atob(base64id).match(/^gid:\/\/shopify\/\w+\/(\w+)/)?[1]
+
+
+# Make a Shopify GID given a object type and id
+export makeShopifyId = (type, id) -> btoa "gid://shopify/#{type}/#{id}"

@@ -81,3 +81,25 @@
 
 	.success
 		background green
+
+
+	.icon-spinner, .icon-cog
+		margin-left 7px
+		font-size 0.8em
+		position relative
+		display inline-block
+		animation spin 0.5s linear infinite
+
+		// Transition effects
+		&.v-enter-active, &.v-leave-active
+			transition opacity 0.1s
+		&.v-enter, &.v-leave-to
+			opacity 0
+
+
+// Make something spin
+@keyframes spin
+	from
+		transform rotate(0deg)
+	to
+		transform rotate(359deg)

@@ -16,6 +16,12 @@ Cloak components for rendering Customer components.
   - write_customers
   - read_customers
 5. Make sure accounts are at least set to optional on the shop (/admin/settings/checkout)
+6. Redirect account pages to the nuxt site (this will need to be placed either in `shopify-theme/main.coffee` or `shopify-theme/plugins/routing.coffee`)
+```
+# Redirect account pages to www site
+if match = location.pathname.match /^\/(account)/
+then location.href = makeNuxtUrl location.pathname
+```
 
 ### Options
 

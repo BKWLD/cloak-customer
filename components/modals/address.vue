@@ -102,7 +102,9 @@ modal.cloak-address-modal.customer-modal(
 
 			.bottom-actions
 				btn
-					button(type='submit') {{ btnText }}
+					button(type='submit')
+						span {{ btnText }}
+						span.icon-cog(v-if='processing')
 
 
 </template>

@@ -48,7 +48,9 @@ form.cloak-customer-form(@submit.prevent='onSubmit' ref='form')
 
 
 	.form-actions
-		btn(:loading='processing' type='submit') Register
+		btn(:loading='processing' type='submit')
+			span Register
+			span.icon-cog(v-if='processing')
 
 		ul
 			li(v-if='canLogin')
