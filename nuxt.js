@@ -44,14 +44,6 @@ export default function() {
 	// Register package page routes
 	this.extendRoutes((routes, resolve) => {
 
-		// Support customer and token route segments an activate and reset. So they
-		// become like /account/reset/:customerId/:resetToken
-		routes.forEach((route) => {
-			if(route.path.match(/^\/account\/(activate|reset)/)) {
-				route.path = "#{match[0]}/:customerId/:token";
-			}
-		})
-
 		// Define all the customer page routes
 		const customerRoutes = [
 			{
