@@ -2,7 +2,7 @@
 	"name": "@cloak-app/customer",
 	"version": "1.0.0",
 	"description": "Cloak components for rendering customer components.",
-	"repository": "git@github.com:BKWLD/cloak-copy.git",
+	"repository": "git@github.com:BKWLD/cloak-customer.git",
 	"author": "Bukwild <info@bukwild.com>",
 	"license": "MIT",
 	"main": "nuxt.js",
@@ -28,5 +28,8 @@
 		"@cloak-app/demo-theme": "^1.0.5",
 		"@nuxt/content": "^1.14.0",
 		"nuxt": "^2.14.0"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
